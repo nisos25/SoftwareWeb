@@ -22,6 +22,7 @@ Route::get('/ProductoCanasta', function () {
     return view('ProductoCanasta.index');
 
 });
+
 /*s
 Route::get('ProductoCanasta/create',[ProductocanastaController::class,'create']);
 */

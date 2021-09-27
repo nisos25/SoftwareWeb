@@ -141,11 +141,7 @@ class ProductocanastaController extends Controller
         if(Storage::delete('public/'.$producto->Imagen)){
             productocanasta::destroy($id);
         }
-        
-         return redirect('ProductoCanasta')->with('mensaje','Producto borrado');
-    }
 
-    public function index2(){
-        return view('ProductoCanasta.index2');
+         return redirect('ProductoCanasta')->with('mensaje','Producto borrado');
     }
 }
