@@ -11,8 +11,9 @@
     </button>
     </div>   
     @endif
-
+@can('admin.index.create')
 <a href="{{url('ProductoCanasta/create')}}"  class="btn btn-success" > RESGISTRAR NUEVO PRODUCTO</a>
+@endcan
 <br/>
 <br/>
 <table class="table table-light">
@@ -23,7 +24,9 @@
             <th>Nombre</th>
             <th>Precio</th>
             <th>Cantidad</th>
+            @can('admin.index.create')
             <th>Acciones</th>
+            @endcan
         </tr>
     </thead>
     <tbody>
@@ -38,6 +41,7 @@
             <td>{{$producto->Nombre}}</td>
             <td>{{$producto->precio}}</td>
             <td>{{$producto->cantidad}}</td>
+            @can('admin.index.create')
             <td>
                 <a href="{{url('/ProductoCanasta/'.$producto->id.'/edit' )}}" class="btn btn-warning">
                 EDITAR
@@ -51,6 +55,7 @@
             </form>
 
             </td>
+            @endcan
         </tr>
         @endforeach
     </tbody>

@@ -23,7 +23,7 @@ Route::get('/ProductoCanasta', function () {
 
 });
 
-/*s
+/*
 Route::get('ProductoCanasta/create',[ProductocanastaController::class,'create']);
 */
 Route::resource('ProductoCanasta', ProductocanastaController::class);
@@ -32,5 +32,5 @@ Auth::routes(['reset'=>false]);
 Route::get('/home', [ProductocanastaController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'],function(){
-    Route::get('/home', [ProductocanastaController::class, 'index'])->name('home');
+    Route::get('/', [ProductocanastaController::class, 'index'])->name('home');
 });
