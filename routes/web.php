@@ -15,7 +15,7 @@ use App\Http\Controllers\ProductocanastaController;
 */
 
 Route::get('/', function () {
-    return view('ProductoCanasta\index');
+    return view('ProductoCanasta\menu');
 });
 
 Route::get('/ProductoCanasta', function () {
