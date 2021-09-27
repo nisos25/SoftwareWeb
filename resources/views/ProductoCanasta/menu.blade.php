@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('ProductoCanasta.index')}}">Canasta agrícola</a>
+                    <a class="nav-link" href="{{ route('home') }}">Canasta agrícola</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#asociaciones">Emprendiminetos y asociaciones</a>
@@ -64,18 +64,16 @@
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        @can('admin.index.create')
+                            <a class="dropdown-item" href="{{ route('home') }}">
+                                {{ __('Admin') }}
+                            </a>
+                        @endcan 
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                            @can('admin.index.create')
-                            <a class="dropdown-item" href="{{ route('ProductoCanasta.index') }}">
-                                {{ __('Admin') }}
-                            </a>
-                            @endcan
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-         
                         </div> 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf

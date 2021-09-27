@@ -19,14 +19,6 @@ class ProductocanastaController extends Controller
         $datos['productocanasta']=productocanasta::paginate(5);
         return view('ProductoCanasta.menu',$datos);
     }
-
-    public function index2()
-    {
-        //
-        $datos['productocanasta']=productocanasta::paginate(5);
-        return view('ProductoCanasta.menu');
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -150,5 +142,16 @@ class ProductocanastaController extends Controller
         }
 
          return redirect('ProductoCanasta')->with('mensaje','Producto borrado');
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function Menu()
+    {
+        //
+        $datos['productocanasta']=productocanasta::paginate(5);
+        return view('ProductoCanasta.index',$datos);
     }
 }
