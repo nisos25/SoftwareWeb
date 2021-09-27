@@ -32,7 +32,7 @@
                     <a class="nav-link" href="{{route('ProductoCanasta.index') }}">Canasta agrícola</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Emprendiminetos y asociaciones</a>
+                    <a class="nav-link" href="#asociaciones">Emprendiminetos y asociaciones</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Agrooferta</a>
@@ -82,7 +82,6 @@
     </div>
 </nav>
 
-<!--- Image Slider -->
 <div id="slides" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
         <li data-target="#slides" data-slide-to="0" class="active"></li>
@@ -107,7 +106,6 @@
     </div>
 </div>
 
-<!--- Jumbotron -->
 <section id="jumbotron">
     <div class="container-fluid">
         <div class="row jumbotron">
@@ -127,8 +125,7 @@
 </section>
 
 
-<!--- Two Column Section -->
-<div class="container-fluid padding">
+<div class="container-fluid padding" id="asociaciones">
     <div class="row padding">
         <div class="col-md-12 col-lg-6">
             <h2>Emprendiminetos y asociaciones</h2>
