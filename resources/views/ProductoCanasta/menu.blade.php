@@ -87,16 +87,19 @@
 	</ul>
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img src="img/background.jpg" > 
+			<img src="img/background.jpg" >
 			<div class="carousel-caption">
-				<h2 class="display-2">Visita nuestra tienda virtal</h2>
+				<h2 class="display-2">Visita nuestra tienda virtual</h2>
 				<button type="button" class="btn btn-outline-light btn-lg">Ir a la Tienda</button>
 				<button type="button" class="btn btn-primary btn-lg">Agrooferta</button>
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="img/background2.png">
+			<img src="img/background2.jpg">
 		</div>
+        <div class="carousel-item">
+            <img src="img/background3.jpg">
+        </div>
 	</div>
 </div>
 
@@ -105,11 +108,11 @@
 	<div class="container-fluid">
 		<div class="row jumbotron">
 			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-				<p class="lead">Apoya el campo caucano comprando en nuestra tienda virtual 
+				<p class="lead">Apoya el campo caucano comprando en nuestra tienda virtual
 				</p>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-				<a href="#"><button type="button" class="btn btn-outline-secondary 
+				<a href="#"><button type="button" class="btn btn-outline-secondary
 					btn-lg">TIENDA </button></a>
 			</div>
 		</div>
@@ -124,7 +127,7 @@
 		<div class="col-lg-6">
 			<h2>Emprendiminetos y asociaciones</h2>
 			<p>Uno de los objetivos de cauca agrosostenible es promover los emprendimientos de nuestro departamento
-				por lo cual decimos darle todo un espacio para que cada persona se tome el trabajo de conocerlas mas a fondo 
+				por lo cual decimos darle todo un espacio para que cada persona se tome el trabajo de conocerlas mas a fondo
 
 			</p>
 			 <br>
@@ -146,7 +149,7 @@
 
 <!--- Emoji Section -->
 
-  
+
 <!--- Meet the team -->
 <section id="gente">
 	<div class="container-fluid padding">
@@ -172,7 +175,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4">
 			<div class="card">
 				<img class="card-img-top" src="img/team2.png">
@@ -197,7 +200,7 @@
 	</div>
 
 	<!--- Welcome Section -->
-<section id="evento">	
+<section id="evento">
 <div class="container-fluid padding">
 	<div class="row welcome text-center">
 		<div class="col-12">
