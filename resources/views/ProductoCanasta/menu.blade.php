@@ -10,6 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -126,17 +130,15 @@
 <!--- Two Column Section -->
 <div class="container-fluid padding">
     <div class="row padding">
-        <div class="col-lg-6">
+        <div class="col-md-12 col-lg-6">
             <h2>Emprendiminetos y asociaciones</h2>
             <p>Uno de los objetivos de cauca agrosostenible es promover los emprendimientos de nuestro departamento
                 por lo cual decimos darle todo un espacio para que cada persona se tome el trabajo de conocerlas mas a
                 fondo
-
             </p>
-            <br>
-            <a href="#" class="btn btn-primary">Mas y mas</a>
+            <a href="#" class="btn btn-primary">Más</a>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <img src="img/emprendedores.jpg" class="img-fluid">
         </div>
     </div>
