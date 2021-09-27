@@ -29,11 +29,11 @@
                             <label for="Rol" class="col-md-4 col-form-label text-md-right">{{ __('Rol') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-select input-lg" aria-label=".form-select-lg example" name="Rol">
-                                    <option value="1">Admin</option>
-                                    <option value="2">User</option>
+                                <select class="form-select input-lg" aria-label=".form-select-lg example" name="rol">
+                                    <option value="Admin">Admin</option>
+                                    <option value="User">User</option>
                                 </select>
-                                @error('Rol')
+                                @error('rol')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

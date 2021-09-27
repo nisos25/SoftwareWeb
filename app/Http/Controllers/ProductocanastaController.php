@@ -20,6 +20,13 @@ class ProductocanastaController extends Controller
         return view('ProductoCanasta.menu',$datos);
     }
 
+    public function index2()
+    {
+        //
+        $datos['productocanasta']=productocanasta::paginate(5);
+        return view('ProductoCanasta.menu');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
