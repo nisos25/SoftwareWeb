@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Testo</title>
+	<title>#CaucaAgro</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,7 +26,7 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Canasta agrícola</a>
+					<a class="nav-link" href="{{route('ProductoCanasta.index') }}">Canasta agrícola</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Emprendiminetos y asociaciones</a>
@@ -38,7 +38,7 @@
 					<a class="nav-link" href="#gente">Inversionistas</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Eventos</a>
+					<a class="nav-link" href="#evento">Eventos</a>
 				</li>
 				<li class="nav-item">
 				@guest
@@ -87,20 +87,19 @@
 	</ul>
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img src="img/background.png">
+			<img src="img/background.jpg" >
 			<div class="carousel-caption">
-				<h1 class="display-2">Bootstrap</h1>
-				<h3>Complete blah blah blah</h3>
-				<button type="button" class="btn btn-outline-light btn-lg">VIEW TESTOO</button>
-				<button type="button" class="btn btn-primary btn-lg">Get started</button>
+				<h2 class="display-2">Visita nuestra tienda virtual</h2>
+				<button type="button" class="btn btn-outline-light btn-lg">Ir a la Tienda</button>
+				<button type="button" class="btn btn-primary btn-lg">Agrooferta</button>
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="img/background2.png">
+			<img src="img/background2.jpg">
 		</div>
-		<div class="carousel-item">
-			<img src="img/background3.png">
-		</div>
+        <div class="carousel-item">
+            <img src="img/background3.jpg">
+        </div>
 	</div>
 </div>
 
@@ -109,74 +108,33 @@
 	<div class="container-fluid">
 		<div class="row jumbotron">
 			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-				<p class="lead">Servicio para blah blah blah blah blah blah blah blah blah blah blah blah
-					blah blah blah blah blah blah
+				<p class="lead">Apoya el campo caucano comprando en nuestra tienda virtual
 				</p>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-				<a href="#"><button type="button" class="btn btn-outline-secondary 
-					btn-lg">TIENDA O ALGO</button></a>
+				<a href="#"><button type="button" class="btn btn-outline-secondary
+					btn-lg">TIENDA </button></a>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!--- Welcome Section -->
-<div class="container-fluid padding">
-	<div class="row welcome text-center">
-		<div class="col-12">
-			<h1 class="display-4">Construido para blah</h1>
-		</div>
-		<hr>
-		<div class="col-12">
-			<p class="lead">Bienvenido a blah blah blah blah blah blah blah blah blah blah blah blah
-				blah blah blah blah blah blah</p>
-		</div>
-	</div>
-</div>
 
-<!--- Three Column Section -->
-<div class="container-fluid padding">
-	<div class="row text-center padding">
-		<div class="col-xs-12 col-sm-6 col-md-4">
-			<i class="fas fa-code"></i>
-			<h3>TESTO</h3>
-			<p>TESTO MORE TESTO WITH BLAH BLAH</p>
-		</div>
-		<div class="col-xs-12 col-sm-6 col-md-4">
-			<i class="fas fa-bold"></i>
-			<h3>TESTO</h3>
-			<p>TESTO MORE TESTO WITH BLAH BLAH</p>
-		</div>
-		<div class="col-sm-12 col-md-4">
-			<i class="fab fa-css3"></i>
-			<h3>TESTO</h3>
-			<p>TESTO MORE TESTO WITH BLAH BLAH</p>
-		</div>
-	</div>
-	<hr class="my-4">
-</div>
 
 <!--- Two Column Section -->
 <div class="container-fluid padding">
 	<div class="row padding">
 		<div class="col-lg-6">
-			<h2>TESTO TESTO MAS TESTOO</h2>
-			<p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-				blah blah blah blah blah blah blah blah blah blah blah blah blah 
+			<h2>Emprendiminetos y asociaciones</h2>
+			<p>Uno de los objetivos de cauca agrosostenible es promover los emprendimientos de nuestro departamento
+				por lo cual decimos darle todo un espacio para que cada persona se tome el trabajo de conocerlas mas a fondo
+
 			</p>
-			<p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-				blah blah blahblah blah blah blah blah blah blah blah blah blah blah 
-				blah blah blah blah blah blah blah blah blah blah blah blah 
-			 </p>
-			 <p>blah blah blah blah blah blah blah blah blah blah blah blah blah 
-				blah blah blah blah blah blah blah 
-			 </p>
 			 <br>
 			 <a href="#" class="btn btn-primary">Mas y mas</a>
 		</div>
 		<div class="col-lg-6">
-			<img src="img/desk.png" class="img-fluid">
+			<img src="img/emprendedores.jpg" class="img-fluid">
 		</div>
 	</div>
 </div>
@@ -191,13 +149,13 @@
 
 <!--- Emoji Section -->
 
-  
+
 <!--- Meet the team -->
 <section id="gente">
 	<div class="container-fluid padding">
 		<div class="row welcome text-center">
 			<div class="col-12">
-				<h1 class="display-4">Inversionistas or something</h1>
+				<h1 class="display-4">Inversionistas </h1>
 			</div>
 			<hr>
 		</div>
@@ -217,7 +175,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4">
 			<div class="card">
 				<img class="card-img-top" src="img/team2.png">
@@ -240,6 +198,36 @@
 			</div>
 		</div>
 	</div>
+
+	<!--- Welcome Section -->
+<section id="evento">
+<div class="container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12">
+			<h1 class="display-4">Eventos</h1>
+		</div>
+		<hr>
+		<div class="col-12">
+			<p class="lead">Conoce los eventos mas cercanos en el cauca </p>
+		</div>
+	</div>
+</div>
+
+<!--- Three Column Section -->
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+
+		<div class="col-sm-12 col-md-4">
+		</div>
+		<iframe src="https://www.google.com/maps?q=Popayan%20Cauca%2C%20Carrera%2016%20Norte%2C%20Popay%C3%A1n%2C%20Cauca%2C%20Colombia&z=12&t=&ie=UTF8&output=embed"  frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+		</div>
+		</div>
+	</div>
+	<hr class="my-4">
+</div>
+</section>
+
+
 </div>
 
 <!--- Two Column Section -->
