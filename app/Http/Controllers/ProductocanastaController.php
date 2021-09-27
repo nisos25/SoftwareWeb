@@ -17,7 +17,7 @@ class ProductocanastaController extends Controller
     {
         //
         $datos['productocanasta']=productocanasta::paginate(5);
-        return view('ProductoCanasta.index',$datos);
+        return view('ProductoCanasta.menu',$datos);
     }
 
     /**
