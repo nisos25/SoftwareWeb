@@ -29,13 +29,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('ProductoCanasta.index') }}">Canasta agrícola</a>
+                    <a class="nav-link" href="#">Canasta agrícola</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#asociaciones">Emprendiminetos y asociaciones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Agrooferta</a>
+                    <a class="nav-link" href="/SoftwareWeb/public/tienda">Tienda</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#gente">Inversionistas</a>
@@ -110,14 +110,11 @@
     <div class="container-fluid">
         <div class="row jumbotron">
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-                <p class="lead">Apoya el campo caucano comprando en nuestra tienda virtual
-                </p>
+                <p class="lead">Busca todos nuestros productos en promoción</p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
                 <a href="#">
-                    <button type="button" class="btn btn-outline-secondary
-					btn-lg">TIENDA
-                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg">OFERTAS</button>
                 </a>
             </div>
         </div>
