@@ -21,7 +21,7 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+        <a class="navbar-brand" href="{{route('home')}}"><img src="img/logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
@@ -29,13 +29,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Canasta agrícola</a>
+                    <a class="nav-link" href="{{ route('home') }}">Canasta agrícola</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#asociaciones">Emprendiminetos y asociaciones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/SoftwareWeb/public/tienda">Tienda</a>
+                    <a class="nav-link" href="#">Agrooferta</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#gente">Inversionistas</a>
@@ -63,18 +63,21 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
-
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        @can('admin.index.create')
+                            <a class="dropdown-item" href="{{ route('home') }}">
+                                {{ __('Admin') }}
+                            </a>
+                        @endcan 
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        </div> 
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
-                            </form>
-                        </div>
+                        </form>
                     </li>
                 @endguest
             </ul>
@@ -110,11 +113,14 @@
     <div class="container-fluid">
         <div class="row jumbotron">
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-                <p class="lead">Busca todos nuestros productos en promoción</p>
+                <p class="lead">Apoya el campo caucano comprando en nuestra tienda virtual
+                </p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
                 <a href="#">
-                    <button type="button" class="btn btn-outline-secondary btn-lg">OFERTAS</button>
+                    <button type="button" class="btn btn-outline-secondary
+					btn-lg">TIENDA
+                    </button>
                 </a>
             </div>
         </div>

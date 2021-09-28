@@ -14,23 +14,20 @@ use App\Http\Controllers\ProductocanastaController;
 |
 */
 
-Route::get('/', function () {
-    return view('ProductoCanasta\menu');
-});
 
+/*
 Route::get('/ProductoCanasta', function () {
     return view('ProductoCanasta.index');
 
 });
-
-/*s
-Route::get('ProductoCanasta/create',[ProductocanastaController::class,'create']);
 */
+
 Route::resource('ProductoCanasta', ProductocanastaController::class);
 Auth::routes(['reset'=>false]);
 
 Route::get('/home', [ProductocanastaController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'],function(){
-    Route::get('/home', [ProductocanastaController::class, 'index'])->name('home');
+    Route::get('/', [ProductocanastaController::class, 'index'])->name('home');
 });
+Route::get('/Admin', [ProductocanastaController::class, 'Menu'])->name('home');
