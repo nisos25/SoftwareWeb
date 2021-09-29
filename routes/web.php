@@ -28,6 +28,8 @@ Auth::routes(['reset'=>false]);
 Route::get('/home', [ProductocanastaController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'],function(){
-    Route::get('/', [ProductocanastaController::class, 'index'])->name('home');
+    Route::get('/', [ProductocanastaController::class, 'index'])->name('basicRoute');
 });
-Route::get('/Admin', [ProductocanastaController::class, 'Menu'])->name('home');
+Route::get('/Admin', [ProductocanastaController::class, 'Menu'])->name('adminHome');
+
+Route::get('/Tienda', [ProductocanastaController::class, 'Tienda'])->name('tienda');
