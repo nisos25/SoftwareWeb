@@ -32,10 +32,10 @@
                     <a class="nav-link" href="{{ route('home') }}">Canasta agrícola</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#asociaciones">Emprendiminetos y asociaciones</a>
+                    <a class="nav-link" href="{{ route('home') }}#asociaciones">Emprendiminetos y asociaciones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Agrooferta</a>
+                    <a class="nav-link" href="{{ route('tienda') }}">Tienda</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#gente">Inversionistas</a>
@@ -65,16 +65,16 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         @can('admin.index.create')
-                            <a class="dropdown-item" href="{{ route('home') }}">
+                            <a class="dropdown-item" href="{{ route('adminHome') }}">
                                 {{ __('Admin') }}
                             </a>
-                        @endcan 
+                        @endcan
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                        </div> 
+                        </div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                         </form>
@@ -96,8 +96,8 @@
             <img src="img/background.jpg">
             <div class="carousel-caption">
                 <h2 class="display-2">Visita nuestra tienda virtual</h2>
-                <button type="button" class="btn btn-outline-light btn-lg">Ir a la Tienda</button>
-                <button type="button" class="btn btn-primary btn-lg">Agrooferta</button>
+                <a href="{{ route('tienda') }}" class="btn btn-outline-light btn-lg" role="button" aria-pressed="true">Ir a la tienda</a>
+                <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Agrooferta</a>
             </div>
         </div>
         <div class="carousel-item">
@@ -113,13 +113,13 @@
     <div class="container-fluid">
         <div class="row jumbotron">
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-                <p class="lead">Apoya el campo caucano comprando en nuestra tienda virtual
+                <p class="lead">Mira todas nuestras ofertas
                 </p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
                 <a href="#">
                     <button type="button" class="btn btn-outline-secondary
-					btn-lg">TIENDA
+					btn-lg">OFERTAS
                     </button>
                 </a>
             </div>
@@ -145,17 +145,14 @@
 </div>
 
 <hr class="my-4">
-<!--- Fixed background -->
+
 <figure>
     <div class="fixed-wrap">
         <div id="fixed"></div>
     </div>
 </figure>
 
-<!--- Emoji Section -->
 
-
-<!--- Meet the team -->
 <section id="gente">
     <div class="container-fluid padding">
         <div class="row welcome text-center">
@@ -167,7 +164,6 @@
     </div>
 </section>
 
-<!--- Cards -->
 <div class="container-fluid padding">
     <div class="row padding">
         <div class="col-md-4">
