@@ -38,10 +38,10 @@
                     <a class="nav-link" href="{{ route('tienda') }}">Tienda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#gente">Inversionistas</a>
+                    <a class="nav-link" href="{{ route('home') }}#gente">Inversionistas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#evento">Eventos</a>
+                    <a class="nav-link" href="{{ route('home') }}#evento">Eventos</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -220,12 +220,45 @@
 
 </section>
 
+<footer>
+    <div class="container-fluid padding">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="img/w3newbie.png">
+                <hr class="light">
+                <p>3111111111</p>
+                <p>correa@dominio.com</p>
+                <p>Calle 123 #1-23</p>
+                <p>Popayan, Cauca</p>
+            </div>
+            <div class="col-md-4">
+                <hr class="light">
+                <h5>Horas</h5>
+                <hr class="light">
+                <p>Lunes</p>
+                <p>Lunes</p>
+                <p>Lunes</p>
+            </div>
+            <div class="col-md-4">
+                <hr class="light">
+                <h5>Horas</h5>
+                <hr class="light">
+                <p>Lunes</p>
+                <p>Lunes</p>
+                <p>Lunes</p>
+            </div>
+            <div class="col-12">
+                <hr class="light">
+                <h5>&copy; Pagina</h5>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <script type="text/javascript" src="js/index.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8FmT8OemauzSxiYfQd53vpzsQLemDCbE&callback=initMap">
 </script>
-
-
 
 </body>
 </html>

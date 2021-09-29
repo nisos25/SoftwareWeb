@@ -19,6 +19,18 @@ html, body{
   font-size: 1.1em !important;
 }
 
+footer{
+  margin-top: 1rem;
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
+}
+
+hr.light{
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+}
+
 #team {
   background: #eee !important;
 }
