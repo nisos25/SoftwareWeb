@@ -33,3 +33,7 @@ Route::group(['middleware' => 'auth'],function(){
 Route::get('/Admin', [ProductocanastaController::class, 'Menu'])->name('adminHome');
 
 Route::get('/Tienda', [ProductocanastaController::class, 'Tienda'])->name('tienda');
+
+Route::get('/Inversionistas', [ProductocanastaController::class, 'Inversionistas'])->name('inversionista');
+
+Route::get('/Emprendimientos', [ProductocanastaController::class, 'Emprendimientos'])->name('emprendimiento');

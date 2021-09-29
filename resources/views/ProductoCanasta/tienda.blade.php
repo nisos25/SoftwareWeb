@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Tienda</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -26,13 +26,13 @@
                     <a class="nav-link" href="{{ route('home') }}">Canasta agrícola</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route ('home') }}#asociaciones">Emprendiminetos y asociaciones</a>
+                    <a class="nav-link" href="{{ route('emprendimiento') }}">Emprendiminetos y asociaciones</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('tienda') }}">Tienda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route ('home') }}#gente">Inversionistas</a>
+                    <a class="nav-link" href="{{route ('inversionista') }}">Inversionistas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route ('home') }}#evento">Eventos</a>
@@ -59,7 +59,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             @can('admin.index.create')
-                                <a class="dropdown-item" href="{{ route('home') }}">
+                                <a class="dropdown-item" href="{{ route('adminHome') }}">
                                     {{ __('Admin') }}
                                 </a>
                             @endcan
