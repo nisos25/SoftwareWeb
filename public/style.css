@@ -95,6 +95,10 @@ hr.light{
     width: 75%;
 }
 
+#imageTesto{
+    max-width: 130%;
+}
+
 /*---Media Queries --*/
 @media (max-width: 992px) {
 

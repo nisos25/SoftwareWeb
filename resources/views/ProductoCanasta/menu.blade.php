@@ -131,7 +131,7 @@
 <div class="container-fluid padding" id="asociaciones">
     <div class="row padding">
         <div class="col-md-12 col-lg-6">
-            <h2>Emprendiminetos y asociaciones</h2>
+            <h2>Emprendimientos y asociaciones</h2>
             <p>Uno de los objetivos de cauca agrosostenible es promover los emprendimientos de nuestro departamento
                 por lo cual decimos darle todo un espacio para que cada persona se tome el trabajo de conocerlas mas a
                 fondo
@@ -139,7 +139,7 @@
             <a href="{{ route('emprendimiento') }}" class="btn btn-primary">Más</a>
         </div>
         <div class="col-lg-4">
-            <img src="img/emprendedores.jpg" class="img-fluid">
+            <img id= "imageTesto" src="img/emprendedores.jpg" class="img-fluid">
         </div>
     </div>
 </div>
