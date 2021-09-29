@@ -138,6 +138,18 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   will-change: transform;
 }
 
+footer{
+  margin-top: 1rem;
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+hr.light{
+  border-top: 1px solid #d5d5d5;
+}
+
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
 }
@@ -6094,12 +6106,12 @@ textarea.form-control-lg {
   bottom: 0;
   z-index: 1;
   display: flex;
-  
+
   justify-content: center;
   width: 15%;
   padding: 0;
   color: #fff;
-  
+
   background: none;
   border: 0;
   opacity: 0.5;
@@ -6382,7 +6394,7 @@ textarea.form-control-lg {
 .placeholder {
   display: inline-block;
   min-height: 1em;
-  
+
   cursor: wait;
   background-color: currentColor;
   opacity: 0.5;

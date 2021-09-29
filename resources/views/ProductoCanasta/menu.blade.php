@@ -38,10 +38,10 @@
                     <a class="nav-link" href="{{ route('tienda') }}">Tienda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#gente">Inversionistas</a>
+                    <a class="nav-link" href="{{ route('home') }}#gente">Inversionistas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#evento">Eventos</a>
+                    <a class="nav-link" href="{{ route('home') }}#evento">Eventos</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -136,7 +136,7 @@
                 por lo cual decimos darle todo un espacio para que cada persona se tome el trabajo de conocerlas mas a
                 fondo
             </p>
-            <a href="#" class="btn btn-primary">Más</a>
+            <a href="{{ route('emprendimiento') }}" class="btn btn-primary">Más</a>
         </div>
         <div class="col-lg-4">
             <img src="img/emprendedores.jpg" class="img-fluid">
@@ -172,7 +172,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Inversionista 1</h4>
                     <p class="card-text">Informacion que nadie ve sobre esta persona</p>
-                    <a href="#" class="btn btn-outline-secondary">Ver mas info</a>
+                    <a href="{{route('inversionista')}}" class="btn btn-outline-secondary">Ver mas info</a>
                 </div>
             </div>
         </div>
@@ -183,7 +183,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Inversionista 2</h4>
                     <p class="card-text">Informacion que nadie ve sobre esta persona</p>
-                    <a href="#" class="btn btn-outline-secondary">Ver mas info</a>
+                    <a href="{{route('inversionista')}}" class="btn btn-outline-secondary">Ver mas info</a>
                 </div>
             </div>
         </div>
@@ -194,7 +194,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Inversionista 3</h4>
                     <p class="card-text">Informacion que nadie ve sobre esta persona</p>
-                    <a href="#" class="btn btn-outline-secondary">Ver mas info</a>
+                    <a href="{{route('inversionista')}}" class="btn btn-outline-secondary">Ver mas info</a>
                 </div>
             </div>
         </div>
@@ -216,18 +216,49 @@
         </div>
     </div>
 
-    <!--- Three Column Section -->
-    <div class="container-fluid padding">
-        <div class="row text-center padding">
+    <div id="map">></div>
 
-            <div class="col-sm-12 col-md-4">
+</section>
+
+<footer>
+    <div class="container-fluid padding">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="img/w3newbie.png">
+                <hr class="light">
+                <p>3111111111</p>
+                <p>correa@dominio.com</p>
+                <p>Calle 123 #1-23</p>
+                <p>Popayan, Cauca</p>
             </div>
-            <iframe
-                src="https://www.google.com/maps?q=Popayan%20Cauca%2C%20Carrera%2016%20Norte%2C%20Popay%C3%A1n%2C%20Cauca%2C%20Colombia&z=12&t=&ie=UTF8&output=embed"
-                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            <div class="col-md-4">
+                <hr class="light">
+                <h5>Horas</h5>
+                <hr class="light">
+                <p>Lunes</p>
+                <p>Lunes</p>
+                <p>Lunes</p>
+            </div>
+            <div class="col-md-4">
+                <hr class="light">
+                <h5>Horas</h5>
+                <hr class="light">
+                <p>Lunes</p>
+                <p>Lunes</p>
+                <p>Lunes</p>
+            </div>
+            <div class="col-12">
+                <hr class="light">
+                <h5>&copy; Pagina</h5>
+            </div>
         </div>
     </div>
-</section>
+</footer>
+
+<script type="text/javascript" src="js/index.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8FmT8OemauzSxiYfQd53vpzsQLemDCbE&callback=initMap">
+</script>
 
 </body>
 </html>
