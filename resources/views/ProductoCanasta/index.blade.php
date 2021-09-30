@@ -12,6 +12,8 @@
             </div>
         @endif
         @can('admin.index.create')
+            <h3>Crud productos</h3>
+            <br>
             <a href="{{url('ProductoCanasta/create')}}" class="btn btn-success"> Registrar nuevo producto </a>
         @endcan
         <br/>
