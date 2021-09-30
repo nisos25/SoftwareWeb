@@ -85,150 +85,32 @@
     <div class="container">
         <h5 class="section-title h1">INVERSIONISTAS</h5>
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" >
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="#" alt="Imagen"></p>
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Testooo</p>
+            @foreach($Inversionistas as $inversionista)
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip">
+                        <div class="mainflip flip-0">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="{{asset('storage'.'/'.$inversionista->Imagen)}}" alt="Imagen"></p>
+                                        <h4 class="card-title">{{$inversionista->Nombre}}</h4>
+                                        <p class="card-text">{{$inversionista->descripcion}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Información más detallada de este inversionista </p>
-                                    <p>Correo@dominion.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" >
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="#" alt="Imagen"></p>
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Testooo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Información más detallada de este inversionista </p>
-                                    <p>Correo@dominion.com</p>
+                            <div class="backside" style="min-width: 100%; max-width: 100%">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">{{$inversionista->Nombre}}</h4>
+                                        <p class="card-text">{{$inversionista->descripcion}}</p>
+                                        <p>{{$inversionista->correo}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" >
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="#" alt="Imagen"></p>
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Testooo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Información más detallada de este inversionista </p>
-                                    <p>Correo@dominion.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" >
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="#" alt="Imagen"></p>
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Testooo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Información más detallada de este inversionista </p>
-                                    <p>Correo@dominion.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" >
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="#" alt="Imagen"></p>
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Testooo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Información más detallada de este inversionista </p>
-                                    <p>Correo@dominion.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" >
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="#" alt="Imagen"></p>
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Testooo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Inversionista</h4>
-                                    <p class="card-text">Información más detallada de este inversionista </p>
-                                    <p>Correo@dominion.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
