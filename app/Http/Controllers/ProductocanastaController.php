@@ -158,4 +158,13 @@ class ProductocanastaController extends Controller
     {
         return view('ProductoCanasta.tienda');
     }
+
+    public function Inversionistas()
+    {
+        return view('ProductoCanasta.inversionistas');
+    }
+
+    public function Emprendimientos(){
+        return view('ProductoCanasta.emprendimientos');
+    }
 }
