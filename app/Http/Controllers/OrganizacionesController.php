@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\productocanasta;
+use App\Models\Organizaciones;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ProductocanastaController extends Controller
+class OrganizacionesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,10 @@ class ProductocanastaController extends Controller
     public function index()
     {
         //
-        $datos['productocanasta']=productocanasta::paginate(5);
-        return view('ProductoCanasta.menu',$datos);
+        $datos['organizaciones']=Organizaciones::paginate(5);
+        return view('Organizaciones.listar',$datos);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +28,7 @@ class ProductocanastaController extends Controller
     public function create()
     {
         //
-        return view('ProductoCanasta.create');
+        return view('Organizaciones.create');
     }
 
     /**
@@ -41,8 +42,8 @@ class ProductocanastaController extends Controller
         //
         $campos=[
             'Nombre'=>'required|string|max:100',
-            'Precio'=>'required|string|max:100',
-            'Cantidad'=>'required|string|max:100',
+            'Ubicacion'=>'required|string|max:100',
+            'Telefono'=>'required|string|max:100',
             'Imagen'=>'required|max:10000|mimes::jpeg,png,jpg',
         ];
         $mensaje=[
@@ -57,19 +58,19 @@ class ProductocanastaController extends Controller
         if($request->hasFile('Imagen')){
             $datosProducto['Imagen']=$request->file('Imagen')->store('uploads','public');
         }
-        productocanasta::insert($datosProducto);
+        Organizaciones::insert($datosProducto);
         // return response()->json($datosProducto);
 
-        return redirect('ProductoCanasta')->with('mensaje','producto agregado con exito');
+        return redirect('Organizaciones')->with('mensaje','Organizacion agregado con exito');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\productocanasta  $productocanasta
+     * @param  \App\Models\Organizaciones  $organizaciones
      * @return \Illuminate\Http\Response
      */
-    public function show(productocanasta $productocanasta)
+    public function show(Organizaciones $organizaciones)
     {
         //
     }
@@ -77,21 +78,21 @@ class ProductocanastaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\productocanasta  $productocanasta
+     * @param  \App\Models\Organizaciones  $organizaciones
      * @return \Illuminate\Http\Response
      */
     public function edit( $id)
     {
         //
-        $producto=productocanasta::findOrFail($id);
-        return view('ProductoCanasta.edit',compact('producto'));
+        $Organizacion=Organizaciones::findOrFail($id);
+        return view('Organizaciones.edit',compact('Organizacion'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\productocanasta  $productocanasta
+     * @param  \App\Models\Organizaciones  $organizaciones
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,  $id)
@@ -99,11 +100,11 @@ class ProductocanastaController extends Controller
         //
         $campos=[
             'Nombre'=>'required|string|max:100',
-            'Precio'=>'required|string|max:100',
-            'Cantidad'=>'required|string|max:100',
+            'Ubicacion'=>'required|string|max:100',
+            'Telefono'=>'required|string|max:100',
         ];
         $mensaje=[
-            'required'=>'El :attribute es requerido',
+            'required'=>' :attribute es requerido',
         ];
         if($request->hasFile('Imagen')){
             $campos=['Imagen'=>'required|max:10000|mimes::jpeg,png,jpg',];
@@ -115,56 +116,31 @@ class ProductocanastaController extends Controller
         $datosProducto = request()->except(['_token','_method'] );
 
         if($request->hasFile('Imagen')){
-            $producto=productocanasta::findOrFail($id);
-            Storage::delete('public/'.$producto->Imagen);
+            $Organizacion=Organizaciones::findOrFail($id);
+            Storage::delete('public/'.$Organizacion->Imagen);
             $datosProducto['Imagen']=$request->file('Imagen')->store('uploads','public');
         }
 
-        productocanasta::where('id','=',$id)->update($datosProducto);
-        $producto=productocanasta::findOrFail($id);
+        Organizaciones::where('id','=',$id)->update($datosProducto);
+        $producto=Organizaciones::findOrFail($id);
         //return view('ProductoCanasta.edit',compact('producto'));
-        return redirect('ProductoCanasta')->with('mensaje','Producto Actualizado');
+        return redirect('Organizaciones')->with('mensaje','Organizacion Actualizado');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\productocanasta  $productocanasta
+     * @param  \App\Models\Organizaciones  $organizaciones
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy($id)
     {
         //
-        $producto=productocanasta::findOrFail($id);
-        if(Storage::delete('public/'.$producto->Imagen)){
-            productocanasta::destroy($id);
+        $producto=Organizaciones::findOrFail($id);
+        if(Storage::delete('public/'.$producto->imagen)){
+            Organizaciones::destroy($id);
         }
 
-         return redirect('ProductoCanasta')->with('mensaje','Producto borrado');
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function Menu()
-    {
-        //
-        $datos['productocanasta']=productocanasta::paginate(5);
-        return view('ProductoCanasta.index',$datos);
-    }
-
-    public function Tienda()
-    {
-        return view('ProductoCanasta.tienda');
-    }
-
-    public function Inversionistas()
-    {
-        return view('ProductoCanasta.inversionistas');
-    }
-
-    public function Emprendimientos(){
-        return view('ProductoCanasta.emprendimientos');
+         return redirect('Organizaciones')->with('mensaje','Organizacion borrado');
     }
 }

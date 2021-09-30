@@ -12,7 +12,7 @@
     </div>   
     @endif
 @can('admin.index.create')
-<a href="{{url('ProductoCanasta/create')}}"  class="btn btn-success" > RESGISTRAR NUEVO PRODUCTO</a>
+<a href="{{url('Eventos/create')}}"  class="btn btn-success" > RESGISTRAR NUEVO PRODUCTO</a>
 @endcan
 <br/>
 <br/>
@@ -20,34 +20,26 @@
     <thead class="thead-light">
         <tr>
             <th>#</th>
-            <th>Imagen</th>
             <th>Nombre</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
+            <th>Ubiacion</th>
             @can('admin.index.create')
             <th>Acciones</th>
             @endcan
         </tr>
     </thead>
     <tbody>
-        @foreach($productocanasta as $producto)
+        @foreach($eventos as $Evento)
         <tr>
-            <td>{{$producto->id}}</td>
-
-            <td>
-            <img  class="img-thumbnail" src="{{asset('storage'.'/'.$producto->Imagen)}}" width="100" alt="">
-            </td>
-
-            <td>{{$producto->Nombre}}</td>
-            <td>{{$producto->precio}}</td>
-            <td>{{$producto->cantidad}}</td>
+            <td>{{$Evento->id}}</td>
+            <td>{{$Evento->Nombre}}</td>
+            <td>{{$Evento->ubicacion}}</td>
             @can('admin.index.create')
             <td>
-                <a href="{{url('/ProductoCanasta/'.$producto->id.'/edit' )}}" class="btn btn-warning">
+                <a href="{{url('/Eventos/'.$Evento->id.'/edit' )}}" class="btn btn-warning">
                 EDITAR
                 </a>
                  | 
-            <form action="{{url('/ProductoCanasta/'.$producto->id)}}"  class="d-inline" method="post">
+            <form action="{{url('/Eventos/'.$Evento->id)}}"  class="d-inline" method="post">
             @csrf
             {{method_field('DELETE')}}
             <input  class="btn btn-danger" type="submit" onclick="return confirm('¿quieres borrar?')"

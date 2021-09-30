@@ -12,7 +12,7 @@
     </div>   
     @endif
 @can('admin.index.create')
-<a href="{{url('ProductoCanasta/create')}}"  class="btn btn-success" > RESGISTRAR NUEVO PRODUCTO</a>
+<a href="{{url('Ofertas/create')}}"  class="btn btn-success" > RESGISTRAR NUEVO PRODUCTO</a>
 @endcan
 <br/>
 <br/>
@@ -22,32 +22,34 @@
             <th>#</th>
             <th>Imagen</th>
             <th>Nombre</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
+            <th>cantidad</th>
+            <th>Descuento</th>
+            <th>precio</th>
             @can('admin.index.create')
             <th>Acciones</th>
             @endcan
         </tr>
     </thead>
     <tbody>
-        @foreach($productocanasta as $producto)
+        @foreach($ofertas as $Oferta)
         <tr>
-            <td>{{$producto->id}}</td>
+            <td>{{$Oferta->id}}</td>
 
             <td>
-            <img  class="img-thumbnail" src="{{asset('storage'.'/'.$producto->Imagen)}}" width="100" alt="">
+                <img  class="img-thumbnail" src="{{asset('storage'.'/'.$Oferta->Imagen)}}" width="100" alt="">
             </td>
 
-            <td>{{$producto->Nombre}}</td>
-            <td>{{$producto->precio}}</td>
-            <td>{{$producto->cantidad}}</td>
+            <td>{{$Oferta->Nombre}}</td>
+            <td>{{$Oferta->cantidad}}</td>
+            <td>{{$Oferta->descuento}}</td>
+            <td>{{$Oferta->precio}}</td>
             @can('admin.index.create')
             <td>
-                <a href="{{url('/ProductoCanasta/'.$producto->id.'/edit' )}}" class="btn btn-warning">
+                <a href="{{url('/Ofertas/'.$Oferta->id.'/edit' )}}" class="btn btn-warning">
                 EDITAR
                 </a>
                  | 
-            <form action="{{url('/ProductoCanasta/'.$producto->id)}}"  class="d-inline" method="post">
+            <form action="{{url('/Ofertas/'.$Oferta->id)}}"  class="d-inline" method="post">
             @csrf
             {{method_field('DELETE')}}
             <input  class="btn btn-danger" type="submit" onclick="return confirm('¿quieres borrar?')"
