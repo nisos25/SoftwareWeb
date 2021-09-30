@@ -34,8 +34,6 @@ Route::resource('Eventos', EventosController::class);
 
 Route::resource('Ofertas', OfertasController::class);
 
-Route::resource('Inversionistas', InversionistaController::class);
-
 Route::resource('Inversionista', InversionistaController::class);
 
 Route::resource('Organizaciones', OrganizacionesController::class);
@@ -51,6 +49,14 @@ Route::get('/Admin', [ProductocanastaController::class, 'Menu'])->name('adminHom
 
 Route::get('/Tienda', [ProductocanastaController::class, 'Tienda'])->name('tienda');
 
-Route::get('/Inversionistas', [ProductocanastaController::class, 'Inversionistas'])->name('inversionista');
+Route::get('/InversionistaTienda', [ProductocanastaController::class, 'Inversionistas'])->name('inversionistaTienda');
 
 Route::get('/Emprendimientos', [ProductocanastaController::class, 'Emprendimientos'])->name('emprendimiento');
+
+Route::get('/Organizaciones', [OrganizacionesController::class, 'index'])->name('organizacionesCrud');
+
+Route::get('/Ofertas', [OfertasController::class, 'index'])->name('ofertasCrud');
+
+Route::get('/Inversionistas', [InversionistaController::class, 'index'])->name('inversionistasCrud');
+
+Route::get('/Eventos', [EventosController::class, 'index'])->name('eventosCrud');

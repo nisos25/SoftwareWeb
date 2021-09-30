@@ -34,7 +34,7 @@
                     <a class="nav-link" href="{{ route('tienda') }}">Tienda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route ('inversionista') }}">Inversionistas</a>
+                    <a class="nav-link" href="{{route ('inversionistaTienda') }}">Inversionistas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route ('home') }}#evento">Eventos</a>

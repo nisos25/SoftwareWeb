@@ -172,7 +172,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Inversionista 1</h4>
                     <p class="card-text">Informacion que nadie ve sobre esta persona</p>
-                    <a href="{{route('inversionista')}}" class="btn btn-outline-secondary">Ver mas info</a>
+                    <a href="{{route('inversionistaTienda')}}" class="btn btn-outline-secondary">Ver mas info</a>
                 </div>
             </div>
         </div>
@@ -183,7 +183,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Inversionista 2</h4>
                     <p class="card-text">Informacion que nadie ve sobre esta persona</p>
-                    <a href="{{route('inversionista')}}" class="btn btn-outline-secondary">Ver mas info</a>
+                    <a href="{{route('inversionistaTienda')}}" class="btn btn-outline-secondary">Ver mas info</a>
                 </div>
             </div>
         </div>
@@ -194,7 +194,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Inversionista 3</h4>
                     <p class="card-text">Informacion que nadie ve sobre esta persona</p>
-                    <a href="{{route('inversionista')}}" class="btn btn-outline-secondary">Ver mas info</a>
+                    <a href="{{route('inversionistaTienda')}}" class="btn btn-outline-secondary">Ver mas info</a>
                 </div>
             </div>
         </div>
