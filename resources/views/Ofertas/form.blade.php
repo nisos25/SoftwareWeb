@@ -1,45 +1,51 @@
 <h1>{{$modo}} Oferta</h1>
 
 @if(count($errors)>0)
-     <div class="alert alert-danger" role="alert">
-    <ul>        
-        @foreach($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-    </ul>    
-     </div> 
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
 @endif
 
 
 <div class="form-grup">
-<label for="Nombre"> Nombre </label>
-<input type="text" class="form-control" name="Nombre" value="{{isset($producto->Nombre)?$producto->Nombre:old('Nombre')}}"  id="Nombre">
+    <label for="Nombre"> Nombre </label>
+    <input type="text" class="form-control" name="Nombre"
+           value="{{isset($producto->Nombre)?$producto->Nombre:old('Nombre')}}" id="Nombre">
 
 </div>
 
 <div class="form-grup">
-<label for="Precio"> Precio </label>
-<input type="text" class="form-control" name="Precio" value="{{isset($producto->precio)?$producto->precio:old('Precio')}}"  id="Precio">
+    <label for="Precio"> Precio </label>
+    <input type="text" class="form-control" name="Precio"
+           value="{{isset($producto->precio)?$producto->precio:old('Precio')}}" id="Precio">
 </div>
 
 <div class="form-grup">
-<label for="Cantidad"> Cantidad </label>
-<input type="text" class="form-control" name="Cantidad" value="{{isset($producto->cantidad)?$producto->cantidad:old('Cantidad')}}" id="Cantidad">
+    <label for="Cantidad"> Cantidad </label>
+    <input type="text" class="form-control" name="Cantidad"
+           value="{{isset($producto->cantidad)?$producto->cantidad:old('Cantidad')}}" id="Cantidad">
 </div>
 
 <div class="form-grup">
-<label for="Cantidad"> Descuento </label>
-<input type="text" class="form-control" name="Descuento" value="{{isset($producto->descuento)?$producto->descuento:old('Descuento')}}" id="descuento">
+    <label for="Cantidad"> Descuento </label>
+    <input type="text" class="form-control" name="Descuento"
+           value="{{isset($producto->descuento)?$producto->descuento:old('Descuento')}}" id="descuento">
+    <br>
 </div>
 <div class="form-grup">
-<label for="Imagen">  </label>
-@if(isset($producto->Imagen))
-<img class="img-thumbnail img-fluid" src="{{asset('storage'.'/'.$producto->Imagen)}}" width="100" alt="">
-@endif
-<input type="file"  class="form-control" name="Imagen" value="" id="Imagen">
+    <label for="Imagen"> </label>
+    @if(isset($producto->Imagen))
+        <img class="img-thumbnail img-fluid" src="{{asset('storage'.'/'.$producto->Imagen)}}" width="100" alt="">
+    @endif
+    <input type="file" class="form-control" name="Imagen" value="" id="Imagen">
 </div>
-<input class="btn btn-success" type="submit" Value="{{$modo}} datos"> 
+<br>
+<input class="btn btn-success" type="submit" Value="{{$modo}} datos">
 
-<a class="btn btn-primary" href="{{url('Ofertas')}}"> RESGRESAR</a>
+<a class="btn btn-primary" href="{{url('Ofertas')}}"> Regresar</a>
 
-<br>   
+<br>

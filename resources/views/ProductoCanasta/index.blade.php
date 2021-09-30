@@ -12,7 +12,7 @@
             </div>
         @endif
         @can('admin.index.create')
-            <a href="{{url('ProductoCanasta/create')}}" class="btn btn-success"> REGISTRAR NUEVO PRODUCTO</a>
+            <a href="{{url('ProductoCanasta/create')}}" class="btn btn-success"> Registrar nuevo producto </a>
         @endcan
         <br/>
         <br/>
@@ -47,13 +47,13 @@
                             <a href="{{url('/ProductoCanasta/'.$producto->id.'/edit' )}}" class="btn btn-warning">
                                 EDITAR
                             </a>
-
+                            |
                             <form action="{{url('/ProductoCanasta/'.$producto->id)}}" class="d-inline"
                                   method="post">
                                 @csrf
                                 {{method_field('DELETE')}}
                                 <input class="btn btn-danger" type="submit"
-                                       onclick="return confirm('¿quieres borrar?')"
+                                       onclick="return confirm('¿Desea borrar?')"
                                        value="Borrar">
                             </form>
 

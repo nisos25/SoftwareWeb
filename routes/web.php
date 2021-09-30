@@ -20,8 +20,6 @@ use App\Http\Controllers\OfertasController;
 */
 
 
-
-
 Route::get('/crud', function () {
     return view('ProductoCanasta.index');
 
@@ -60,3 +58,5 @@ Route::get('/Ofertas', [OfertasController::class, 'index'])->name('ofertasCrud')
 Route::get('/Inversionistas', [InversionistaController::class, 'index'])->name('inversionistasCrud');
 
 Route::get('/Eventos', [EventosController::class, 'index'])->name('eventosCrud');
+
+

@@ -4,7 +4,7 @@
 
 <form  action="{{url ('/Organizaciones')}}" method="post" enctype="multipart/form-data">
 @csrf
-@include('Organizaciones.form',['modo'=>'Crear']);
+@include('Organizaciones.form',['modo'=>'Crear'])
 </form>
 </div>
 @endsection
