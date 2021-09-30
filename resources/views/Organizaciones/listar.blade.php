@@ -12,7 +12,7 @@
     </div>   
     @endif
 @can('admin.index.create')
-<a href="{{url('ProductoCanasta/create')}}"  class="btn btn-success" > RESGISTRAR NUEVO PRODUCTO</a>
+<a href="{{url('Organizaciones/create')}}"  class="btn btn-success" > RESGISTRAR NUEVO PRODUCTO</a>
 @endcan
 <br/>
 <br/>
@@ -22,32 +22,32 @@
             <th>#</th>
             <th>Imagen</th>
             <th>Nombre</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
+            <th>Ubicacion</th>
+            <th>telefono</th>
             @can('admin.index.create')
             <th>Acciones</th>
             @endcan
         </tr>
     </thead>
     <tbody>
-        @foreach($productocanasta as $producto)
+        @foreach($organizaciones as $Organizacion)
         <tr>
-            <td>{{$producto->id}}</td>
+            <td>{{$Organizacion->id}}</td>
 
             <td>
-            <img  class="img-thumbnail" src="{{asset('storage'.'/'.$producto->Imagen)}}" width="100" alt="">
+                <img  class="img-thumbnail" src="{{asset('storage'.'/'.$Organizacion->imagen)}}" >
             </td>
 
-            <td>{{$producto->Nombre}}</td>
-            <td>{{$producto->precio}}</td>
-            <td>{{$producto->cantidad}}</td>
+            <td>{{$Organizacion->nombre}}</td>
+            <td>{{$Organizacion->ubicacion}}</td>
+            <td>{{$Organizacion->telefono}}</td>
             @can('admin.index.create')
             <td>
-                <a href="{{url('/ProductoCanasta/'.$producto->id.'/edit' )}}" class="btn btn-warning">
+                <a href="{{url('/Organizaciones/'.$Organizacion->id.'/edit' )}}" class="btn btn-warning">
                 EDITAR
                 </a>
                  | 
-            <form action="{{url('/ProductoCanasta/'.$producto->id)}}"  class="d-inline" method="post">
+            <form action="{{url('/Organizaciones/'.$Organizacion->id)}}"  class="d-inline" method="post">
             @csrf
             {{method_field('DELETE')}}
             <input  class="btn btn-danger" type="submit" onclick="return confirm('¿quieres borrar?')"

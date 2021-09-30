@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\productocanasta;
+use App\Models\Ofertas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ProductocanastaController extends Controller
+
+class OfertasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,10 @@ class ProductocanastaController extends Controller
     public function index()
     {
         //
-        $datos['productocanasta']=productocanasta::paginate(5);
-        return view('ProductoCanasta.menu',$datos);
+        $datos['ofertas']=Ofertas::paginate(5);
+        return view('Ofertas.listar',$datos);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +29,7 @@ class ProductocanastaController extends Controller
     public function create()
     {
         //
-        return view('ProductoCanasta.create');
+        return view('Ofertas.create');
     }
 
     /**
@@ -41,12 +43,13 @@ class ProductocanastaController extends Controller
         //
         $campos=[
             'Nombre'=>'required|string|max:100',
-            'Precio'=>'required|string|max:100',
             'Cantidad'=>'required|string|max:100',
+            'Descuento'=>'required|string|max:100',
+            'Precio'=>'required|string|max:100',
             'Imagen'=>'required|max:10000|mimes::jpeg,png,jpg',
         ];
         $mensaje=[
-            'required'=>'El :attribute es requerido',
+            'required'=>' :attribute es requerido',
             'Imagen.required'=>'La Imagen es requerida',
         ];
 
@@ -57,19 +60,19 @@ class ProductocanastaController extends Controller
         if($request->hasFile('Imagen')){
             $datosProducto['Imagen']=$request->file('Imagen')->store('uploads','public');
         }
-        productocanasta::insert($datosProducto);
+        Ofertas::insert($datosProducto);
         // return response()->json($datosProducto);
 
-        return redirect('ProductoCanasta')->with('mensaje','producto agregado con exito');
+        return redirect('Ofertas')->with('mensaje','Oferta agregada con exito');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\productocanasta  $productocanasta
+     * @param  \App\Models\Ofertas  $ofertas
      * @return \Illuminate\Http\Response
      */
-    public function show(productocanasta $productocanasta)
+    public function show(Ofertas $ofertas)
     {
         //
     }
@@ -77,21 +80,21 @@ class ProductocanastaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\productocanasta  $productocanasta
+     * @param  \App\Models\Ofertas  $ofertas
      * @return \Illuminate\Http\Response
      */
     public function edit( $id)
     {
         //
-        $producto=productocanasta::findOrFail($id);
-        return view('ProductoCanasta.edit',compact('producto'));
+        $producto=Ofertas::findOrFail($id);
+        return view('Ofertas.edit',compact('producto'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\productocanasta  $productocanasta
+     * @param  \App\Models\Ofertas  $ofertas
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,  $id)
@@ -99,11 +102,12 @@ class ProductocanastaController extends Controller
         //
         $campos=[
             'Nombre'=>'required|string|max:100',
-            'Precio'=>'required|string|max:100',
             'Cantidad'=>'required|string|max:100',
+            'Descuento'=>'required|string|max:100',
+            'Precio'=>'required|string|max:100',
         ];
         $mensaje=[
-            'required'=>'El :attribute es requerido',
+            'required'=>' :attribute es requerido',
         ];
         if($request->hasFile('Imagen')){
             $campos=['Imagen'=>'required|max:10000|mimes::jpeg,png,jpg',];
@@ -115,47 +119,31 @@ class ProductocanastaController extends Controller
         $datosProducto = request()->except(['_token','_method'] );
 
         if($request->hasFile('Imagen')){
-            $producto=productocanasta::findOrFail($id);
+            $producto=Ofertas::findOrFail($id);
             Storage::delete('public/'.$producto->Imagen);
             $datosProducto['Imagen']=$request->file('Imagen')->store('uploads','public');
         }
 
-        productocanasta::where('id','=',$id)->update($datosProducto);
-        $producto=productocanasta::findOrFail($id);
+        Ofertas::where('id','=',$id)->update($datosProducto);
+        $producto=Ofertas::findOrFail($id);
         //return view('ProductoCanasta.edit',compact('producto'));
-        return redirect('ProductoCanasta')->with('mensaje','Producto Actualizado');
+        return redirect('Ofertas')->with('mensaje','Oferta Actualizada');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\productocanasta  $productocanasta
+     * @param  \App\Models\Ofertas  $ofertas
      * @return \Illuminate\Http\Response
      */
     public function destroy( $id)
     {
         //
-        $producto=productocanasta::findOrFail($id);
+        $producto=Ofertas::findOrFail($id);
         if(Storage::delete('public/'.$producto->Imagen)){
-            productocanasta::destroy($id);
+            Ofertas::destroy($id);
         }
 
-         return redirect('ProductoCanasta')->with('mensaje','Producto borrado');
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function Menu()
-    {
-        //
-        $datos['productocanasta']=productocanasta::paginate(5);
-        return view('ProductoCanasta.index',$datos);
-    }
-
-    public function Tienda()
-    {
-        return view('ProductoCanasta.tienda');
+         return redirect('Ofertas')->with('mensaje','Oferta borrada');
     }
 }
