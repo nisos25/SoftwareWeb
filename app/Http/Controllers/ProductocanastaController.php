@@ -123,7 +123,7 @@ class ProductocanastaController extends Controller
         productocanasta::where('id','=',$id)->update($datosProducto);
         $producto=productocanasta::findOrFail($id);
         //return view('ProductoCanasta.edit',compact('producto'));
-        return redirect('ProductoCanasta')->with('mensaje','Producto Actualizado');
+        return redirect('Admin')->with('mensaje','Producto Actualizado');
     }
 
     /**
@@ -140,7 +140,7 @@ class ProductocanastaController extends Controller
             productocanasta::destroy($id);
         }
 
-         return redirect('ProductoCanasta')->with('mensaje','Producto borrado');
+         return redirect('Admin')->with('mensaje','Producto borrado');
     }
     /**
      * Show the form for creating a new resource.
@@ -156,7 +156,8 @@ class ProductocanastaController extends Controller
 
     public function Tienda()
     {
-        return view('ProductoCanasta.tienda');
+        $datos['productocanasta']=productocanasta::paginate(100);
+        return view('ProductoCanasta.tienda',$datos);
     }
 
     public function Inversionistas()

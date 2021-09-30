@@ -16,7 +16,7 @@
 
 	<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="{{ route('ProductoCanasta.index') }}"><img src="img/logo.png"></a>
+			<a class="navbar-brand" href="{{ route('home') }}"><img src="img/logo.png"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarResponsive">
 				<span class="navbar-toggler-icon"></span>
@@ -24,19 +24,19 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Canasta agrícola</a>
+					<a class="nav-link" href="{{ route('adminHome') }}">Crud productos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Emprendiminetos y asociaciones</a>
+					<a class="nav-link" href="{{ route('organizacionesCrud') }}">Crud organizaciones</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Agrooferta</a>
+					<a class="nav-link" href="{{ route('ofertasCrud') }}">Crud ofertas</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#gente">Inversionistas</a>
+					<a class="nav-link" href="{{ route('inversionistasCrud') }}">Crud inversionistas</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Eventos</a>
+					<a class="nav-link" href="{{ route('eventosCrud') }}">Crud eventos</a>
 				</li>
             </ul>
 
