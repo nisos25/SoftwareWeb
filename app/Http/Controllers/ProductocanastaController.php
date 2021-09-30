@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Eventos;
 use App\Models\productocanasta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -46,7 +46,7 @@ class ProductocanastaController extends Controller
             'Imagen'=>'required|max:10000|mimes::jpeg,png,jpg',
         ];
         $mensaje=[
-            'required'=>'El :attribute es requerido',
+            'required'=>':attribute es requerido',
             'Imagen.required'=>'La Imagen es requerida',
         ];
 
@@ -60,7 +60,7 @@ class ProductocanastaController extends Controller
         productocanasta::insert($datosProducto);
         // return response()->json($datosProducto);
 
-        return redirect('ProductoCanasta')->with('mensaje','producto agregado con exito');
+        return redirect('Admin')->with('mensaje','producto agregado con exito');
     }
 
     /**
@@ -103,7 +103,7 @@ class ProductocanastaController extends Controller
             'Cantidad'=>'required|string|max:100',
         ];
         $mensaje=[
-            'required'=>'El :attribute es requerido',
+            'required'=>':attribute es requerido',
         ];
         if($request->hasFile('Imagen')){
             $campos=['Imagen'=>'required|max:10000|mimes::jpeg,png,jpg',];
@@ -151,6 +151,7 @@ class ProductocanastaController extends Controller
     {
         //
         $datos['productocanasta']=productocanasta::paginate(5);
+        $datos2['productocanasta']=eventos::paginate(5);
         return view('ProductoCanasta.index',$datos);
     }
 

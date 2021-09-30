@@ -64,6 +64,7 @@
             @endforeach
             </tbody>
         </table>
+        {!! $ofertas->links() !!}
     </div>
 
 

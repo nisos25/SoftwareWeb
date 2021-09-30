@@ -14,26 +14,26 @@
 <div class="form-grup">
     <label for="Nombre"> Nombre </label>
     <input type="text" class="form-control" name="Nombre"
-           value="{{isset($producto->Nombre)?$producto->nombre:old('Nombre')}}" id="Nombre">
+           value="{{isset($Organizacion->nombre)?$Organizacion->nombre:old('Nombre')}}" id="Nombre">
 
 </div>
 
 <div class="form-grup">
-    <label for="Precio"> Ubicacion </label>
+    <label for="Ubicacion"> Ubicacion </label>
     <input type="text" class="form-control" name="Ubicacion"
-           value="{{isset($producto->precio)?$producto->ubicacion:old('Ubicacion')}}" id="Ubicacion">
+           value="{{isset($Organizacion->ubicacion)?$Organizacion->ubicacion:old('Ubicacion')}}" id="Ubicacion">
 </div>
 
 <div class="form-grup">
-    <label for="Cantidad"> Telefono </label>
+    <label for="Telefono"> Telefono </label>
     <input type="text" class="form-control" name="Telefono"
-           value="{{isset($producto->cantidad)?$producto->telefono:old('Telefono')}}" id="Telefono">
+           value="{{isset($Organizacion->telefono)?$Organizacion->telefono:old('Telefono')}}" id="Telefono">
     <br>
 </div>
 <div class="form-grup">
     <label for="Imagen"> </label>
-    @if(isset($producto->Imagen))
-        <img class="img-thumbnail img-fluid" src="{{asset('storage'.'/'.$producto->Imagen)}}" width="100" alt="100s">
+    @if(isset($Organizacion->imagen))
+        <img class="img-thumbnail img-fluid" src="{{asset('storage'.'/'.$Organizacion->imagen)}}" width="100" alt="100s">
     @endif
     <input type="file" class="form-control" name="Imagen" value="" id="Imagen">
 </div>

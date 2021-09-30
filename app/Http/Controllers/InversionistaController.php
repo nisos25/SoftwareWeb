@@ -61,7 +61,7 @@ class InversionistaController extends Controller
         Inversionista::insert($datosinversionista);
         // return response()->json($datosProducto);
 
-        return redirect('Inversionitas')->with('mensaje','Inversionita agregado con exito');
+        return redirect('Inversionista')->with('mensaje','Inversionita agregado con exito');
     }
 
     /**
@@ -86,25 +86,7 @@ class InversionistaController extends Controller
         $producto=Inversionista::findOrFail($id);
         return view('Inversionistas.edit',compact('producto'));
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Ofertas  $ofertas
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy( $id)
-    {
-        //
-        $producto=Inversionista::findOrFail($id);
-        if(Storage::delete('public/'.$producto->Imagen)){
-            Inversionista::destroy($id);
-        }
-
-         return redirect('Inversionistas')->with('mensaje','Inversionista borrado');
-    }
-
-    /**
+       /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -141,6 +123,22 @@ class InversionistaController extends Controller
                 Inversionista::where('id','=',$id)->update($datosProducto);
                 $producto=Inversionista::findOrFail($id);
                 //return view('ProductoCanasta.edit',compact('producto'));
-                return redirect('Inversionistas')->with('mensaje','Inversionista Actualizado');
+                return redirect('Inversionista')->with('mensaje','Inversionista Actualizado');
+    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Ofertas  $ofertas
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy( $id)
+    {
+        //
+        $producto=Inversionista::findOrFail($id);
+        if(Storage::delete('public/'.$producto->Imagen)){
+            Inversionista::destroy($id);
+        }
+
+         return redirect('Inversionista')->with('mensaje','Inversionista borrado');
     }
 }
