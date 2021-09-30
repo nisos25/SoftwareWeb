@@ -4,5 +4,5 @@
 
 <form  action="{{url ('/Eventos')}}" method="post" enctype="multipart/form-data">
 @csrf
-@include('Eventos.form',['modo'=>'Crear']);
+@include('Eventos.form',['modo'=>'Crear'])
 </form>
