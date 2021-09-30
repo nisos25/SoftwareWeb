@@ -62,11 +62,11 @@
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        @can('admin.index.create')
-                            <a class="dropdown-item" href="{{ route('adminHome') }}">
-                                {{ __('Admin') }}
-                            </a>
-                        @endcan
+                            @can('admin.index.create')
+                                <a class="dropdown-item" href="{{ route('adminHome') }}">
+                                    {{ __('Admin') }}
+                                </a>
+                            @endcan
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -74,7 +74,7 @@
                             </a>
                         </div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
+                            @csrf
                         </form>
                     </li>
                 @endguest
@@ -94,7 +94,8 @@
             <img src="img/background.jpg">
             <div class="carousel-caption">
                 <h2 class="display-2">Visita nuestra tienda virtual</h2>
-                <a href="{{ route('tienda') }}" class="btn btn-outline-light btn-lg" role="button" aria-pressed="true">Ir a la tienda</a>
+                <a href="{{ route('tienda') }}" class="btn btn-outline-light btn-lg" role="button" aria-pressed="true">Ir
+                    a la tienda</a>
                 <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Agrooferta</a>
             </div>
         </div>
@@ -137,7 +138,7 @@
             <a href="{{ route('emprendimiento') }}" class="btn btn-primary">Más</a>
         </div>
         <div class="col-lg-4">
-            <img id= "imageTesto" src="img/emprendedores.jpg" class="img-fluid">
+            <img id="imageTesto" src="img/emprendedores.jpg" class="img-fluid">
         </div>
     </div>
 </div>
@@ -164,38 +165,18 @@
 
 <div class="container-fluid padding">
     <div class="row padding">
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="img/team1.png">
-                <div class="card-body">
-                    <h4 class="card-title">Inversionista 1</h4>
-                    <p class="card-text">Informacion que nadie ve sobre esta persona</p>
-                    <a href="{{route('inversionistaTienda')}}" class="btn btn-outline-secondary">Ver mas info</a>
+        @foreach($Inversionistas as $inversionista)
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{asset('storage'.'/'.$inversionista->Imagen)}}">
+                    <div class="card-body">
+                        <h4 class="card-title">{{$inversionista->Nombre}}</h4>
+                        <p class="card-text">{{$inversionista->descripcion}}</p>
+                        <a href="{{route('inversionistaTienda')}}" class="btn btn-outline-secondary">Ver mas información</a>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="img/team2.png">
-                <div class="card-body">
-                    <h4 class="card-title">Inversionista 2</h4>
-                    <p class="card-text">Informacion que nadie ve sobre esta persona</p>
-                    <a href="{{route('inversionistaTienda')}}" class="btn btn-outline-secondary">Ver mas info</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="img/team3.png">
-                <div class="card-body">
-                    <h4 class="card-title">Inversionista 3</h4>
-                    <p class="card-text">Informacion que nadie ve sobre esta persona</p>
-                    <a href="{{route('inversionistaTienda')}}" class="btn btn-outline-secondary">Ver mas info</a>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <hr class="my-4">

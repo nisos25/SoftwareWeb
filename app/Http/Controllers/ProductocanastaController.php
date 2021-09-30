@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\productocanasta;
+use App\Models\inversionista;
+use App\Models\Organizaciones;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,6 +19,7 @@ class ProductocanastaController extends Controller
     {
         //
         $datos['productocanasta']=productocanasta::paginate(5);
+        $datos['Inversionistas']=inversionista::paginate(3);
         return view('ProductoCanasta.menu',$datos);
     }
     /**
@@ -162,10 +165,12 @@ class ProductocanastaController extends Controller
 
     public function Inversionistas()
     {
-        return view('ProductoCanasta.inversionistas');
+        $datos['Inversionistas']=inversionista::paginate(50);
+        return view('ProductoCanasta.inversionistas', $datos);
     }
 
     public function Emprendimientos(){
-        return view('ProductoCanasta.emprendimientos');
+        $datos['Organizaciones']=Organizaciones::paginate(50);
+        return view('ProductoCanasta.emprendimientos', $datos);
     }
 }
