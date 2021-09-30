@@ -94,7 +94,6 @@
                                     <div class="card-body text-center">
                                         <p><img class=" img-fluid" src="{{asset('storage'.'/'.$inversionista->Imagen)}}" alt="Imagen"></p>
                                         <h4 class="card-title">{{$inversionista->Nombre}}</h4>
-                                        <p class="card-text">{{$inversionista->descripcion}}</p>
                                     </div>
                                 </div>
                             </div>
