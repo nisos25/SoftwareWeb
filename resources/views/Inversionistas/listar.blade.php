@@ -9,10 +9,10 @@
     <button type="button" class="close" data-dismiss="alert" arial-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
-    </div>   
+    </div>
     @endif
 @can('admin.index.create')
-<a href="{{url('Inversionistas/create')}}"  class="btn btn-success" > RESGISTRAR NUEVO PRODUCTO</a>
+<a href="{{url('Inversionista/create')}}"  class="btn btn-success" > Registrar nuevo inversionista</a>
 @endcan
 <br/>
 <br/>
@@ -46,11 +46,11 @@
                 <a href="{{url('/Inversionistas/'.$Inversionista->id.'/edit' )}}" class="btn btn-warning">
                 EDITAR
                 </a>
-                 | 
+                |
             <form action="{{url('/Inversionistas/'.$Inversionista->id)}}"  class="d-inline" method="post">
             @csrf
             {{method_field('DELETE')}}
-            <input  class="btn btn-danger" type="submit" onclick="return confirm('¿quieres borrar?')"
+            <input  class="btn btn-danger" type="submit" onclick="return confirm('¿Deseas borrar?')"
             value="Borrar">
             </form>
 

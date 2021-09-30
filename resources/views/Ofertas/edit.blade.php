@@ -4,7 +4,7 @@
 <form action="{{url('/Ofertas/'.$producto->id)}}" method="post" enctype="multipart/form-data">
 @csrf
 {{method_field('PATCH')}}
-@include('Ofertas.form',['modo'=>'Editar']);
+@include('Ofertas.form',['modo'=>'Editar'])
 
 </form>
 </div>
