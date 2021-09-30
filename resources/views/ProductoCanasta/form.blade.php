@@ -1,4 +1,4 @@
-<h1>{{$modo}} Empleado</h1>
+<h1>{{$modo}} Producto</h1>
 
 @if(count($errors)>0)
      <div class="alert alert-danger" role="alert">

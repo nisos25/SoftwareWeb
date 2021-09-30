@@ -24,26 +24,8 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="Rol" class="col-md-4 col-form-label text-md-right">{{ __('Rol') }}</label>
-
-                            <div class="col-md-6">
-                                <select class="form-select input-lg" aria-label=".form-select-lg example" name="rol">
-                                    <option value="Admin">Admin</option>
-                                    <option value="User">User</option>
-                                </select>
-                                @error('rol')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electrónico') }}</label>
-
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 

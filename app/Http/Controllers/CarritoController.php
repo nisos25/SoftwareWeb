@@ -15,6 +15,8 @@ class CarritoController extends Controller
     public function index()
     {
         //
+        $datos['Carrito']=carrito::paginate(5);
+        return view('Carrito.listar',$datos);
     }
 
     /**
