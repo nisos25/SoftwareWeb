@@ -43,12 +43,6 @@
             <td>{{$producto->cantidad}}</td>
             @can('admin.index.create')
             <td>
-            <a href="{{url('/ProductoCanasta/'.$producto->id.'/edit' )}}" class="btn btn-warning">
-                Añadir al carrito| 
-                <a href="{{url('/ProductoCanasta/'.$producto->id.'/edit' )}}" class="btn btn-warning">
-                EDITAR
-                </a>
-                 | 
             <form action="{{url('/ProductoCanasta/'.$producto->id)}}"  class="d-inline" method="post">
             @csrf
             {{method_field('DELETE')}}

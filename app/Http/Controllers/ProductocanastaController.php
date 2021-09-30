@@ -156,7 +156,8 @@ class ProductocanastaController extends Controller
 
     public function Tienda()
     {
-        return view('ProductoCanasta.tienda');
+        $datos['productocanasta']=productocanasta::paginate(5);
+        return view('ProductoCanasta.tienda',$datos);
     }
 
     public function Inversionistas()
