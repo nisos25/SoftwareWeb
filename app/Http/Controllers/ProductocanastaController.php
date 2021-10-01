@@ -173,4 +173,8 @@ class ProductocanastaController extends Controller
         $datos['Organizaciones']=Organizaciones::paginate(50);
         return view('ProductoCanasta.emprendimientos', $datos);
     }
+    public function Ofertas(){
+        $datos['productocanasta']=productocanasta::paginate(50);
+        return view('ProductoCanasta.ofertasTienda',$datos);
+    }
 }

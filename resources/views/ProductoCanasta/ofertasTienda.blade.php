@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>#CaucaAgroSostenible</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Tienda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="css/styles.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-    <link href="peopleStyle.css" rel="stylesheet">
 </head>
 <body>
-
+<!-- Navigation-->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{route('home')}}"><img src="img/logo.png"></a>
@@ -40,7 +38,7 @@
                         <a class="dropdown-item" href="{{ route('tienda') }}">
                             Tienda
                         </a>
-                        <a class="dropdown-item" href="{{ route('ofertasTienda') }}">
+                        <a class="dropdown-item" href="#">
                             Agrooferta
                         </a>
                     </div>
@@ -98,35 +96,35 @@
     </div>
 </nav>
 
-<section id="team" class="pb-5">
-    <div class="container">
-        <h5 class="section-title h1">EMPRENDIMIENTOS Y ASOCIACIONES</h5>
-        <div class="row">
-            @foreach($Organizaciones as $organizacion)
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip">
-                        <div class="mainflip flip-0">
-                            <div class="frontside">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="{{asset('storage'.'/'.$organizacion->imagen)}}" alt="Imagen"></p>
-                                        <h4 class="card-title">{{$organizacion->nombre}}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="backside" style="min-width: 100%; max-width: 100%">
-                                <div class="card">
-                                    <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">{{$organizacion->nombre}}</h4>
-                                        <p class="card-text">{{$organizacion->ubicacion}}</p>
-                                        <p>{{$organizacion->telefono}}</p>
-                                    </div>
-                                </div>
-                            </div>
+<!-- Header-->
+<header class="bg-success py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Agro oferta</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Busca nuestros productos al mejor precio</p>
+        </div>
+    </div>
+</header>
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+@foreach($productocanasta as $producto)
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top"  src="{{asset('storage'.'/'.$producto->Imagen)}}"  width="100" alt="..." />
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <h5 class="fw-bolder">{{$producto->Nombre}}</h5>
+                            {{$producto->precio}}
                         </div>
                     </div>
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href={{url('/ProductoCanasta/'.$producto->id.'/edit' )}}>Añadir al carrito</a></div>
+                    </div>
                 </div>
-            @endforeach
+            </div>
+@endforeach
         </div>
     </div>
 </section>
@@ -166,5 +164,7 @@
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
