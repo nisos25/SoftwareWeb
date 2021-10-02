@@ -22,6 +22,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
+		@can('admin.index.create')
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
 					<a class="nav-link" href="{{ route('adminHome') }}">Crud productos</a>
@@ -39,7 +40,7 @@
 					<a class="nav-link" href="{{ route('eventosCrud') }}">Crud eventos</a>
 				</li>
             </ul>
-
+		@endcan
             <ul class="navbar-nav ml-auto">
 				@guest
                     @if (Route::has('login'))

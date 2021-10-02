@@ -27,6 +27,8 @@ Route::get('/crud', function () {
 });
 
 Route::resource('ProductoCanasta', ProductocanastaController::class);
+
+Route::resource('AdminHome2', ProductocanastaController::class);
 Auth::routes(['reset'=>false]);
 
 Route::resource('Eventos', EventosController::class);
@@ -60,7 +62,7 @@ Route::get('/Organizaciones', [OrganizacionesController::class, 'index'])->name(
 
 Route::get('/Ofertas', [OfertasController::class, 'index'])->name('ofertasCrud');
 
-Route::get('/Inversionistas', [InversionistaController::class, 'index'])->name('inversionistasCrud');
+Route::get('/Inversionista', [InversionistaController::class, 'index'])->name('inversionistasCrud');
 
 Route::get('/Eventos', [EventosController::class, 'index'])->name('eventosCrud');
 

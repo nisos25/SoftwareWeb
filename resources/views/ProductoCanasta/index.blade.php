@@ -65,6 +65,7 @@
             @endforeach
             </tbody>
         </table>
+        {!! $productocanasta->links() !!}
     </div>
 
 

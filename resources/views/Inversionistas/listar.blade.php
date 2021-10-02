@@ -46,11 +46,11 @@
                     <td>{{$Inversionista->correo}}</td>
                     @can('admin.index.create')
                         <td>
-                            <a href="{{url('/Inversionistas/'.$Inversionista->id.'/edit' )}}" class="btn btn-warning">
+                            <a href="{{url('/Inversionista/'.$Inversionista->id.'/edit')}}" class="btn btn-warning">
                                 EDITAR
                             </a>
                             |
-                            <form action="{{url('/Inversionistas/'.$Inversionista->id)}}" class="d-inline"
+                            <form action="{{url('/Inversionista/'.$Inversionista->id)}}" class="d-inline"
                                   method="post">
                                 @csrf
                                 {{method_field('DELETE')}}
@@ -64,6 +64,7 @@
             @endforeach
             </tbody>
         </table>
+        {!! $Inversionistas->links() !!}
     </div>
 
 

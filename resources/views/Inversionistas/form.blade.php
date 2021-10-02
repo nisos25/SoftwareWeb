@@ -1,4 +1,4 @@
-<h1>{{$modo}} inversionitas</h1>
+<h1>{{$modo}} inversionita</h1>
 
 @if(count($errors)>0)
     <div class="alert alert-danger" role="alert">
@@ -19,15 +19,15 @@
 </div>
 
 <div class="form-grup">
-    <label for="Precio">Descripcion </label>
+    <label for="Descripcion">Descripcion </label>
     <input type="text" class="form-control" name="Descripcion"
-           value="{{isset($producto->Descripcion)?$producto->Descripcion:old('Descripcion')}}" id="Descripcion">
+           value="{{isset($producto->descripcion)?$producto->descripcion:old('Descripcion')}}" id="Descripcion">
 </div>
 
 <div class="form-grup">
-    <label for="Cantidad"> Correo </label>
+    <label for="Correo"> Correo </label>
     <input type="text" class="form-control" name="Correo"
-           value="{{isset($producto->Correo)?$producto->Correo:old('Correo')}}" id="Correo">
+           value="{{isset($producto->correo)?$producto->correo:old('Correo')}}" id="Correo">
     <br>
 </div>
 <div class="form-grup">

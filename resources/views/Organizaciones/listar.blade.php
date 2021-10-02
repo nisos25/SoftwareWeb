@@ -37,7 +37,7 @@
                     <td>{{$Organizacion->id}}</td>
 
                     <td>
-                        <img class="img-thumbnail" src="{{asset('storage'.'/'.$Organizacion->imagen)}}">
+                    <img class="img-thumbnail" src="{{asset('storage'.'/'.$Organizacion->imagen)}}" width="100" alt="...">
                     </td>
 
                     <td>{{$Organizacion->nombre}}</td>
@@ -62,6 +62,7 @@
             @endforeach
             </tbody>
         </table>
+        {!! $organizaciones->links() !!}
     </div>
 
 
