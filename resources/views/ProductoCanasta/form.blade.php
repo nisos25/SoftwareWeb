@@ -40,6 +40,6 @@
 <br>
 <input class="btn btn-success" type="submit" Value="{{$modo}} datos">
 
-<a class="btn btn-primary" href="{{url('ProductoCanasta')}}"> Regresar </a>
+<a class="btn btn-primary" href="{{url('Admin')}}"> Regresar </a>
 
 <br>

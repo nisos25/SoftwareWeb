@@ -47,7 +47,7 @@ class OrganizacionesController extends Controller
             'Imagen'=>'required|max:10000|mimes::jpeg,png,jpg',
         ];
         $mensaje=[
-            'required'=>'El :attribute es requerido',
+            'required'=>':attribute es requerido',
             'Imagen.required'=>'La Imagen es requerida',
         ];
 
@@ -104,7 +104,7 @@ class OrganizacionesController extends Controller
             'Telefono'=>'required|string|max:100',
         ];
         $mensaje=[
-            'required'=>' :attribute es requerido',
+            'required'=>':attribute es requerido',
         ];
         if($request->hasFile('Imagen')){
             $campos=['Imagen'=>'required|max:10000|mimes::jpeg,png,jpg',];

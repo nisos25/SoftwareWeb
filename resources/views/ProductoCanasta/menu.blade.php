@@ -205,16 +205,16 @@
             <div class="col-md-4">
                 <img src="img/w3newbie.png">
                 <hr class="light">
-                <p>3111111111</p>
-                <p>correa@dominio.com</p>
-                <p>Calle 123 #1-23</p>
+                <p>Informacion</p>
+                <p>caucaagrosostenible@gmail.com</p>
+                <p>Cl 5 #4-70, Popayán, Cauca</p>
                 <p>Popayan, Cauca</p>
             </div>
             <div class="col-md-4">
                 <hr class="light">
-                <h5>Horas</h5>
+                <h5>Redes</h5>
                 <hr class="light">
-                <p>Lunes</p>
+                <p><img src="img/facebook.png" width="100" alt=""></p>
                 <p>Lunes</p>
                 <p>Lunes</p>
             </div>
@@ -228,7 +228,7 @@
             </div>
             <div class="col-12">
                 <hr class="light">
-                <h5>&copy; Pagina</h5>
+                <h5>&copy; caucaagro</h5>
             </div>
         </div>
     </div>
