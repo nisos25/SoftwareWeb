@@ -19,6 +19,7 @@ class CreateProductocanastasTable extends Migration
             $table->string('Imagen');
             $table->string('cantidad');
             $table->string('precio');
+            $table->string('descuento');
             $table->timestamps();
         });
     }

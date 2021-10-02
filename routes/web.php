@@ -47,7 +47,7 @@ Route::get('/Admin', [ProductocanastaController::class, 'Menu'])->name('adminHom
 
 Route::get('/Tienda', [ProductocanastaController::class, 'Tienda'])->name('tienda');
 
-Route::get('/OfertasTienda', [ProductocanastaController::class, 'Ofertas'])->name('ofertasTienda');
+Route::get('/OfertasTienda', [ProductocanastaController::class, 'OfertasDescuento'])->name('ofertasTienda');
 
 Route::get('/InversionistaTienda', [ProductocanastaController::class, 'Inversionistas'])->name('inversionistaTienda');
 
