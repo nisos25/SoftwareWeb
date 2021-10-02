@@ -6,6 +6,7 @@ use App\Http\Controllers\EventosController;
 use App\Http\Controllers\InversionistaController;
 use App\Http\Controllers\OrganizacionesController;
 use App\Http\Controllers\OfertasController;
+use App\Http\Controllers\CarritoController;
 
 
 /*
@@ -36,6 +37,8 @@ Route::resource('Inversionista', InversionistaController::class);
 
 Route::resource('Organizaciones', OrganizacionesController::class);
 
+//Route::resource('Carrito', CarritoController::class);
+
 Route::get('storage-link', function(){Artisan::call('storage:link');});
 
 Route::get('/home', [ProductocanastaController::class, 'index'])->name('home');
@@ -60,5 +63,7 @@ Route::get('/Ofertas', [OfertasController::class, 'index'])->name('ofertasCrud')
 Route::get('/Inversionistas', [InversionistaController::class, 'index'])->name('inversionistasCrud');
 
 Route::get('/Eventos', [EventosController::class, 'index'])->name('eventosCrud');
+
+Route::get('/Carrito', [CarritoController::class, 'index'])->name('CarritoCrud');
 
 

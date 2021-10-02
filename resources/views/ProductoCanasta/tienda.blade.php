@@ -121,7 +121,11 @@
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href={{url('/ProductoCanasta/'.$producto->id.'/edit' )}}>Añadir al carrito</a></div>
+                        <div class="text-center"> 
+                            <form  action="{{url ('CarritoCrud')}}" method="post" enctype="multipart/form-data">
+                                 <input class="btn btn-success" type="submit" Value="Carrito de compras">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

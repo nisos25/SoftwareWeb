@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\productocanasta;
 use App\Models\inversionista;
 use App\Models\Organizaciones;
+use App\Models\eventos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
@@ -155,6 +156,7 @@ class ProductocanastaController extends Controller
     {
         //
         $datos['productocanasta']=productocanasta::paginate(5);
+        $datos['productocanasta']=eventos::paginate(5);
         return view('ProductoCanasta.index',$datos);
     }
 

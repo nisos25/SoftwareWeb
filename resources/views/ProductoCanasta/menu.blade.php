@@ -17,9 +17,11 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+<!-- Navigation -->
+
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{route('home')}}"><img src="img/logo.png"></a>
+        <a class="navbar-brand" href="{{route('home')}}">  <img src="img/logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>

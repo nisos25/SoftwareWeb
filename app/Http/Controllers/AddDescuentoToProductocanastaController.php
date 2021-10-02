@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\carrito;
+use App\Models\add_descuento_to_productocanasta;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-class CarritoController extends Controller
+class AddDescuentoToProductocanastaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,6 @@ class CarritoController extends Controller
     public function index()
     {
         //
-        $datos['Carritos']=carrito::paginate(5);
-        return view('Carrito.listar',$datos);
     }
 
     /**
@@ -28,7 +25,6 @@ class CarritoController extends Controller
     public function create()
     {
         //
-        return view('home');
     }
 
     /**
@@ -40,16 +36,15 @@ class CarritoController extends Controller
     public function store(Request $request)
     {
         //
-        return view('carrito.listar');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\carrito  $carrito
+     * @param  \App\Models\add_descuento_to_productocanasta  $add_descuento_to_productocanasta
      * @return \Illuminate\Http\Response
      */
-    public function show(carrito $carrito)
+    public function show(add_descuento_to_productocanasta $add_descuento_to_productocanasta)
     {
         //
     }
@@ -57,10 +52,10 @@ class CarritoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\carrito  $carrito
+     * @param  \App\Models\add_descuento_to_productocanasta  $add_descuento_to_productocanasta
      * @return \Illuminate\Http\Response
      */
-    public function edit(carrito $carrito)
+    public function edit(add_descuento_to_productocanasta $add_descuento_to_productocanasta)
     {
         //
     }
@@ -69,10 +64,10 @@ class CarritoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\carrito  $carrito
+     * @param  \App\Models\add_descuento_to_productocanasta  $add_descuento_to_productocanasta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, carrito $carrito)
+    public function update(Request $request, add_descuento_to_productocanasta $add_descuento_to_productocanasta)
     {
         //
     }
@@ -80,10 +75,10 @@ class CarritoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\carrito  $carrito
+     * @param  \App\Models\add_descuento_to_productocanasta  $add_descuento_to_productocanasta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(carrito $carrito)
+    public function destroy(add_descuento_to_productocanasta $add_descuento_to_productocanasta)
     {
         //
     }
