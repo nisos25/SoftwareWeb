@@ -13,7 +13,7 @@
 
     <link href="peopleStyle.css" rel="stylesheet">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
@@ -143,7 +143,7 @@
             @endif
          @endforeach
         @else
-        @foreach($carritos as $producto)                  
+        @foreach($carritos as $producto)
             @if( $producto->id_usuario == Auth::user()->id)
             <tr>
                 <td><img class="img-thumbnail" src="{{asset('storage'.'/'.$producto->imagen)}}" width="100" alt="">
@@ -199,7 +199,7 @@
 
 </div>
 
-<footer>
+<footer class="mt-auto">
     <div class="container-fluid padding">
         <div class="row text-center">
             <div class="col-md-4">
