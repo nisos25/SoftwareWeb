@@ -116,7 +116,7 @@
                     <div class="card-body p-4">
                         <div class="text-center">
                             <h5 class="fw-bolder">{{$producto->Nombre}}</h5>
-                            {{$producto->precio}}
+                            ${{$producto->precio}}
                         </div>
                     </div>
 
@@ -131,7 +131,6 @@
                             @else
                             <a href="{{url ('/carrito/create/'.$producto->id,Auth::user()->id)}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
                             @endguest
-
                             </center>
                         </div>
                     </div>

@@ -14,7 +14,6 @@
         @can('admin.index.create')
             <h3>Crud ofertas</h3>
             <br>
-            <a href="{{url('Ofertas/create')}}" class="btn btn-success"> Registrar nueva oferta</a>
         @endcan
         <br/>
         <br/>
@@ -44,13 +43,10 @@
                     <td>{{$Oferta->Nombre}}</td>
                     <td>{{$Oferta->cantidad}}</td>
                     <td>{{$Oferta->descuento}}</td>
-                    <td>{{$Oferta->precio}}</td>
+                    <?php $preciodescuento= $Oferta->precio-$Oferta->descuento ?>
+                    <td> {{$preciodescuento}} </td>
                     @can('admin.index.create')
                         <td>
-                            <a href="{{url('/Ofertas/'.$Oferta->id.'/edit' )}}" class="btn btn-warning">
-                                EDITAR
-                            </a>
-                            |
                             <form action="{{url('/Ofertas/'.$Oferta->id)}}" class="d-inline" method="post">
                                 @csrf
                                 {{method_field('DELETE')}}

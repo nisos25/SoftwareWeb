@@ -27,7 +27,7 @@
 <div class="form-grup">
     <label for="Cantidad"> Cantidad </label>
     <input type="text" class="form-control" name="Cantidad"
-           value="{{isset($producto->cantidad)?$producto->cantidad:old('Cantidad')}}" id="Cantidad">
+           value="{{isset($producto->cantidad)?$producto->cantidad:old('Cantidad')}}     " id="Cantidad">
 </div>
 
 <div class="form-grup">

@@ -154,14 +154,14 @@ class ProductocanastaController extends Controller
     public function Menu()
     {
         //
-        $datos['productocanasta']=productocanasta::paginate(5);
+        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','<=','0')->paginate(5);
         $datos2['productocanasta']=Eventos::paginate(5);
         return view('ProductoCanasta.index',$datos,$datos2);
     }
 
     public function Tienda()
     {
-        $datos['productocanasta']=productocanasta::paginate(100);
+        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','<=','0')->paginate(5);
         return view('ProductoCanasta.tienda',$datos);
     }
 

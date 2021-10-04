@@ -118,7 +118,7 @@ class OfertasController extends Controller
         $this->validate($request,$campos,$mensaje);
 
         $datosProducto = request()->except(['_token','_method'] );
-
+        
         if($request->hasFile('Imagen')){
             $producto=Ofertas::findOrFail($id);
             Storage::delete('public/'.$producto->Imagen);
@@ -140,11 +140,7 @@ class OfertasController extends Controller
     public function destroy( $id)
     {
         //
-        $producto=Ofertas::findOrFail($id);
-        if(Storage::delete('public/'.$producto->Imagen)){
-            Ofertas::destroy($id);
-        }
-
+        $datos=DB::update('update productocanastas set descuento = 0 where id=?',[$id]);
          return redirect('Ofertas')->with('mensaje','Oferta borrada');
     }
 }
