@@ -28,8 +28,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('emprendimiento') }}">Emprendiminetos y asociaciones</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('tienda') }}">Tienda</a>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Compras
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('tienda') }}">
+                            Tienda
+                        </a>
+                        <a class="dropdown-item" href="{{ route('ofertasTienda') }}">
+                            Agrooferta
+                        </a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route ('inversionistaTienda') }}">Inversionistas</a>
@@ -39,6 +51,11 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="navbar-brand" href="{{route('CarritoCrud')}}"><img src="img/carrito.png"></a>
+                </li>
+
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
@@ -99,12 +116,23 @@
                     <div class="card-body p-4">
                         <div class="text-center">
                             <h5 class="fw-bolder">{{$producto->Nombre}}</h5>
-                            {{$producto->precio}}
+                            ${{$producto->precio}}
                         </div>
                     </div>
+
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href={{url('/ProductoCanasta/'.$producto->id.'/edit' )}}>Añadir al carrito</a></div>
+
+
+                        <div>
+                            <center>
+                            @guest
+                            <a href="{{url ('/carrito/create/'.$producto->id,0)}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
+                            @else
+                            <a href="{{url ('/carrito/create/'.$producto->id,Auth::user()->id)}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
+                            @endguest
+                            </center>
+                        </div>    
                     </div>
                 </div>
             </div>

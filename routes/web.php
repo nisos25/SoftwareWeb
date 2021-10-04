@@ -6,6 +6,7 @@ use App\Http\Controllers\EventosController;
 use App\Http\Controllers\InversionistaController;
 use App\Http\Controllers\OrganizacionesController;
 use App\Http\Controllers\OfertasController;
+use App\Http\Controllers\CarritoController;
 
 
 /*
@@ -28,6 +29,7 @@ Route::get('/crud', function () {
 Route::resource('ProductoCanasta', ProductocanastaController::class);
 
 Route::resource('AdminHome2', ProductocanastaController::class);
+
 Auth::routes(['reset'=>false]);
 
 Route::resource('Eventos', EventosController::class);
@@ -37,6 +39,8 @@ Route::resource('Ofertas', OfertasController::class);
 Route::resource('Inversionista', InversionistaController::class);
 
 Route::resource('Organizaciones', OrganizacionesController::class);
+
+Route::resource('Carrito', CarritoController::class);
 
 Route::get('storage-link', function(){Artisan::call('storage:link');});
 
@@ -48,6 +52,8 @@ Route::group(['middleware' => 'auth'],function(){
 Route::get('/Admin', [ProductocanastaController::class, 'Menu'])->name('adminHome');
 
 Route::get('/Tienda', [ProductocanastaController::class, 'Tienda'])->name('tienda');
+
+Route::get('/OfertasTienda', [ProductocanastaController::class, 'OfertasDescuento'])->name('ofertasTienda');
 
 Route::get('/InversionistaTienda', [ProductocanastaController::class, 'Inversionistas'])->name('inversionistaTienda');
 
@@ -61,4 +67,8 @@ Route::get('/Inversionista', [InversionistaController::class, 'index'])->name('i
 
 Route::get('/Eventos', [EventosController::class, 'index'])->name('eventosCrud');
 
+Route::get('/Carrito', [CarritoController::class, 'index'])->name('CarritoCrud');
 
+Route::get('/carrito/create/{id}/{id_usuario}',[CarritoController::class,'existe']);
+
+Route::post('/carrito/delete/{id}/{id_usuario}',[CarritoController::class,'destroy']);

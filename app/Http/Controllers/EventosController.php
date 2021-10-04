@@ -105,7 +105,7 @@ class EventosController extends Controller
         Eventos::insert($datos);
         // return response()->json($datosProducto);
 
-        return redirect('Eventos')->with('mensaje','Inversionita agregado con exito');
+        return redirect('Eventos')->with('mensaje','Evento agregado con exito');
     }
 
     /**

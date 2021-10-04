@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>#CaucaAgroSostenible</title>
+    <title>CaucaAgroSostenible</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -30,8 +30,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('emprendimiento') }}">Emprendiminetos y asociaciones</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('tienda') }}">Tienda</a>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Compras
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('tienda') }}">
+                            Tienda
+                        </a>
+                        <a class="dropdown-item" href="{{ route('ofertasTienda') }}">
+                            Agrooferta
+                        </a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('inversionistaTienda') }}">Inversionistas</a>
@@ -41,6 +53,11 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="navbar-brand" href="{{route('home')}}"><img src="img/carrito.png"></a>
+                </li>
+
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">

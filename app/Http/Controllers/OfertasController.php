@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ofertas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 
 class OfertasController extends Controller
@@ -17,7 +18,7 @@ class OfertasController extends Controller
     public function index()
     {
         //
-        $datos['ofertas']=Ofertas::paginate(5);
+        $datos['ofertas']=DB::table('productocanastas')->where('descuento','>','0')->paginate(5);
         return view('Ofertas.listar',$datos);
     }
 
@@ -117,7 +118,7 @@ class OfertasController extends Controller
         $this->validate($request,$campos,$mensaje);
 
         $datosProducto = request()->except(['_token','_method'] );
-
+        
         if($request->hasFile('Imagen')){
             $producto=Ofertas::findOrFail($id);
             Storage::delete('public/'.$producto->Imagen);
@@ -139,11 +140,7 @@ class OfertasController extends Controller
     public function destroy( $id)
     {
         //
-        $producto=Ofertas::findOrFail($id);
-        if(Storage::delete('public/'.$producto->Imagen)){
-            Ofertas::destroy($id);
-        }
-
+        $datos=DB::update('update productocanastas set descuento = 0 where id=?',[$id]);
          return redirect('Ofertas')->with('mensaje','Oferta borrada');
     }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>#CaucaAgroSostenible</title>
+    <title>CaucaAgroSostenible</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -17,9 +17,11 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+<!-- Navigation -->
+
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{route('home')}}"><img src="img/logo.png"></a>
+        <a class="navbar-brand" href="{{route('home')}}">  <img src="img/logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
@@ -32,8 +34,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}#asociaciones">Emprendiminetos y asociaciones</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('tienda') }}">Tienda</a>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Compras
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('tienda') }}">
+                            Tienda
+                        </a>
+                        <a class="dropdown-item" href="{{ route('ofertasTienda') }}">
+                            Agrooferta
+                        </a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}#gente">Inversionistas</a>
@@ -43,6 +57,11 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="navbar-brand" href="{{route('CarritoCrud')}}"><img src="img/carrito.png"></a>
+                </li>
+
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
@@ -96,7 +115,7 @@
                 <h2 class="display-2">Visita nuestra tienda virtual</h2>
                 <a href="{{ route('tienda') }}" class="btn btn-outline-light btn-lg" role="button" aria-pressed="true">Ir
                     a la tienda</a>
-                <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Agrooferta</a>
+                <a href="{{ route('ofertasTienda') }}" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Agrooferta</a>
             </div>
         </div>
         <div class="carousel-item">
@@ -116,7 +135,7 @@
                 </p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-                <a href="#">
+                <a href="{{ route('ofertasTienda') }}">
                     <button type="button" class="btn btn-outline-secondary
 					btn-lg">OFERTAS
                     </button>
@@ -172,7 +191,8 @@
                     <div class="card-body">
                         <h4 class="card-title">{{$inversionista->Nombre}}</h4>
                         <p class="card-text">{{$inversionista->descripcion}}</p>
-                        <a href="{{route('inversionistaTienda')}}" class="btn btn-outline-secondary">Ver mas información</a>
+                        <a href="{{route('inversionistaTienda')}}" class="btn btn-outline-secondary">Ver mas
+                            información</a>
                     </div>
                 </div>
             </div>

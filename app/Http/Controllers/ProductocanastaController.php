@@ -7,6 +7,7 @@ use App\Models\inversionista;
 use App\Models\Organizaciones;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class ProductocanastaController extends Controller
 {
@@ -153,14 +154,14 @@ class ProductocanastaController extends Controller
     public function Menu()
     {
         //
-        $datos['productocanasta']=productocanasta::paginate(5);
-        $datos2['productocanasta']=eventos::paginate(5);
-        return view('ProductoCanasta.index',$datos);
+        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','<=','0')->paginate(5);
+        $datos2['productocanasta']=Eventos::paginate(5);
+        return view('ProductoCanasta.index',$datos,$datos2);
     }
 
     public function Tienda()
     {
-        $datos['productocanasta']=productocanasta::paginate(100);
+        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','<=','0')->paginate(5);
         return view('ProductoCanasta.tienda',$datos);
     }
 
@@ -173,5 +174,13 @@ class ProductocanastaController extends Controller
     public function Emprendimientos(){
         $datos['Organizaciones']=Organizaciones::paginate(50);
         return view('ProductoCanasta.emprendimientos', $datos);
+    }
+    public function Ofertas(){
+        $datos['productocanasta']=productocanasta::paginate(50);
+        return view('ProductoCanasta.ofertasTienda',$datos);
+    }
+    public function OfertasDescuento(){
+        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','>','1')->paginate(5);
+        return view('ProductoCanasta.ofertasTienda',$datos);
     }
 }

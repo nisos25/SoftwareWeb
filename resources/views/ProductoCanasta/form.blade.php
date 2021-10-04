@@ -27,9 +27,16 @@
 <div class="form-grup">
     <label for="Cantidad"> Cantidad </label>
     <input type="text" class="form-control" name="Cantidad"
-           value="{{isset($producto->cantidad)?$producto->cantidad:old('Cantidad')}}" id="Cantidad">
-    <br>
+           value="{{isset($producto->cantidad)?$producto->cantidad:old('Cantidad')}}     " id="Cantidad">
 </div>
+
+<div class="form-grup">
+    <label for="Descuento"> Descuento </label>
+    <input type="text" class="form-control" name="Descuento"
+           value="{{isset($producto->Descuento)?$producto->Descuento:old('Precio')}}" id="Descuento">
+    <br>
+    </div>
+
 <div class="form-grup">
     <label for="Imagen"> </label>
     @if(isset($producto->Imagen))
