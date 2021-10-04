@@ -131,7 +131,6 @@
                             @else
                             <a href="{{url ('/carrito/create/'.$producto->id,Auth::user()->id)}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
                             @endguest
-                            
                             </center>
                         </div>    
                     </div>

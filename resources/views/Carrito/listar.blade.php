@@ -150,7 +150,9 @@
                 </td>
                 <td>{{$producto->Nombre}}</td>
                 <td>{{$producto->cantidad}}</td>
-                <td>{{$producto->precio}}</td>
+                <?php $preciodescuento= $producto->precio-$producto->descuento ?>
+                    <td> {{$preciodescuento}} </td>
+
                 @can('admin.index.create')
                     <td>
                         <form action="{{url('/carrito/delete/'.$producto->id, Auth::user()->id)}}" class="d-inline" method="post">
@@ -168,11 +170,14 @@
         @guest
         <div>
             <?php
-            $t = 0?>
+            $t = 0;
+            $descuentos=0;
+            ?>
             @foreach($total as $suma)
                 @if( $suma->id_usuario == 0)
                 <?php
-                $t = (($suma->cantidad) * ($suma->precio) + $t);
+                $t = (($suma->cantidad) * ($suma->precio - $suma->descuento) + $t);
+                $descuentos= $suma->descuento+ $descuentos;
                 ?>
                 @endif
             @endforeach
@@ -180,11 +185,14 @@
         @else
         <div>
             <?php
-            $t = 0?>
+            $t = 0;
+            $descuentos2=0;
+            ?>
             @foreach($total as $suma)
                 @if( $suma->id_usuario == Auth::user()->id)
                 <?php
-                $t = (($suma->cantidad) * ($suma->precio) + $t);
+                $t = (($suma->cantidad) * ($suma->precio - $suma->descuento) + $t);
+                $descuentos2= $suma->descuento + $descuentos2;
                 ?>
                 @endif
             @endforeach
@@ -194,7 +202,7 @@
     </table>
 
     <div>
-        <h1>Total a pagar {{$t}}</h1>
+        <h1>Total a pagar {{$t}} ahorro de {{$descuentos2}} </h1>
     </div>
 
 </div>
