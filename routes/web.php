@@ -70,3 +70,5 @@ Route::get('/Eventos', [EventosController::class, 'index'])->name('eventosCrud')
 Route::get('/Carrito', [CarritoController::class, 'index'])->name('CarritoCrud');
 
 Route::get('/carrito/create/{id}/{id_usuario}',[CarritoController::class,'existe']);
+
+Route::post('/carrito/delete/{id}/{id_usuario}',[CarritoController::class,'destroy']);

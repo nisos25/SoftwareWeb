@@ -18,14 +18,14 @@ class CarritoController extends Controller
     public function index()
     {
         //
-        $datos['carritos']=productocanasta::select('nombre_usuario','productocanastas.id','productocanastas.Nombre','productocanastas.imagen',
+        $datos['carritos']=productocanasta::select('id_usuario','productocanastas.id','productocanastas.Nombre','productocanastas.imagen',
         'carritos.cantidad','productocanastas.precio','productocanastas.descuento')
         ->from('productocanastas')->join('carritos',function($query){
-            $query->on('productocanastas.id','=','carritos.iduser');
+            $query->on('productocanastas.id','=','carritos.idprod');
         })->get();
 
         $total['total']=productocanasta::select('productocanastas.precio','carritos.cantidad')->from('productocanastas')->join('carritos',function($query){
-            $query->on('productocanastas.id','=','carritos.iduser');
+            $query->on('productocanastas.id','=','carritos.idprod');
         })->get();
         return view('Carrito.listar',$datos,$total);
     }
@@ -43,19 +43,19 @@ class CarritoController extends Controller
     }
 
     public function existe($id,$id_usuario)
-    {   
-        $producto=DB::table('carritos')->where('id_usuario','=',$id_usuario,'and','idprod','=',$id)->get();
+    {
+        $producto=DB::table('carritos')->where('id_usuario','=',$id_usuario,'and')->where('idprod','=',$id)->get();
 
         if(count($producto)>0){
-            $this->actualizar($id);
+            $this->actualizar($id, $id_usuario);
         }else{
             $this->create($id,$id_usuario);
         }
 
          return redirect('Tienda');
     }
-    public function actualizar($id){
-         $datos=DB::update('update carritos set cantidad = cantidad+1 where idprod=?',[$id]);
+    public function actualizar($id, $idUser){
+         $datos=DB::update('update carritos set cantidad = cantidad+1 where idprod=? and id_usuario=?',[$id,$idUser]);
          return redirect('Tienda');
     }
     /**
@@ -93,7 +93,7 @@ class CarritoController extends Controller
     public function show(carrito $carrito)
     {
         //
-        
+
     }
 
     /**
@@ -125,18 +125,18 @@ class CarritoController extends Controller
      * @param  \App\Models\carrito  $carrito
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy($id, $idUser)
     {
         //
-        DB::delete('DELETE FROM  carritos WHERE iduser=?',[$id]);
-        return redirect('AdminHome2')->with('mensaje','Producto Eliminado');
+        DB::delete('DELETE FROM  carritos WHERE idprod=? and id_usuario=?',[$id, $idUser]);
+        return redirect('Carrito')->with('mensaje','Producto Eliminado');
     }
 
     public function totalPagar(){
         //
         $datos['totalpagar']=productocanasta::SELECT('productocanastas.precio','carritos.cantidad')->from('productocanastas')->join('carritos',function($query){
-            $query->on('productocanastas.id','=','carritos.iduser');
+            $query->on('productocanastas.id','=','carritos.idprod');
         })->get();
-        return $datos;   
+        return $datos;
     }
 }
