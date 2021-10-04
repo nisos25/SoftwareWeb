@@ -99,14 +99,14 @@ class InversionistaController extends Controller
                 //
                 $campos=[
                     'Nombre'=>'required|string|max:100',
-                    'Descripcion'=>'required|string|max:100',
+                    'Descripcion'=>'required|string',
                     'Correo'=>'required|string|max:100',
                 ];
                 $mensaje=[
                     'required'=>' :attribute es requerido',
                 ];
                 if($request->hasFile('Imagen')){
-                    $campos=['Imagen'=>'required|max:10000|mimes::jpeg,png,jpg',];
+                    $campos=['Imagen'=>'required|mimes::jpeg,png,jpg',];
                     $mensaje=['Imagen.required'=>'La Imagen es requerida'];
                 }
         

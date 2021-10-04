@@ -186,13 +186,13 @@
         <div>
             <?php
             $t = 0;
-            $descuentos2=0;
+            $descuentos=0;
             ?>
             @foreach($total as $suma)
                 @if( $suma->id_usuario == Auth::user()->id)
                 <?php
                 $t = (($suma->cantidad) * ($suma->precio - $suma->descuento) + $t);
-                $descuentos2= $suma->descuento + $descuentos2;
+                $descuentos= $suma->descuento + $descuentos;
                 ?>
                 @endif
             @endforeach
@@ -202,7 +202,7 @@
     </table>
 
     <div>
-        <h1>Total a pagar ${{$t}} ahorro de ${{$descuentos2}} </h1>
+        <h1>Total a pagar ${{$t}} ahorro de ${{$descuentos}} </h1>
     </div>
 
 </div>
