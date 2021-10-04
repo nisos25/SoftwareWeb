@@ -117,7 +117,6 @@
                         <div class="text-center">
                             <h5 class="fw-bolder">{{$producto->Nombre}}</h5>
                             {{$producto->precio}}
-                            {{$producto->id}}
                         </div>
                     </div>
 

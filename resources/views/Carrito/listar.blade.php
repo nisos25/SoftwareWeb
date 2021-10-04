@@ -117,9 +117,8 @@
             <th>Nombre</th>
             <th>Cantidad</th>
             <th>Precio</th>
-            @can('admin.index.create')
-                <th>Acciones</th>
-            @endcan
+            <th>Acciones</th>
+
         </tr>
         </thead>
         <tbody>
