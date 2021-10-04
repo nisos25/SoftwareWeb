@@ -123,7 +123,28 @@
         </tr>
         </thead>
         <tbody>
+        @guest
         @foreach($carritos as $producto)
+        @if( $producto->id_usuario == 0)
+        <tr>
+                <td><img class="img-thumbnail" src="{{asset('storage'.'/'.$producto->imagen)}}" width="100" alt="">
+                </td>
+                <td>{{$producto->Nombre}}</td>
+                <td>{{$producto->cantidad}}</td>
+                <td>{{$producto->precio}}</td>
+                    <td>
+                        <form action="{{url('/carrito/delete/'.$producto->id, 0)}}" class="d-inline" method="post">
+                            @csrf
+                            <input class="btn btn-danger" type="submit" onclick="return confirm('¿Deseas borrar?')"
+                                   value="Borrar">
+                        </form>
+
+                    </td>
+            </tr>
+            @endif
+         @endforeach
+        @else
+        @foreach($carritos as $producto)                  
             @if( $producto->id_usuario == Auth::user()->id)
             <tr>
                 <td><img class="img-thumbnail" src="{{asset('storage'.'/'.$producto->imagen)}}" width="100" alt="">
@@ -144,7 +165,20 @@
             </tr>
             @endif
         @endforeach
-
+        @endguest
+        @guest
+        <div>
+            <?php
+            $t = 0?>
+            @foreach($total as $suma)
+                @if( $suma->id_usuario == 0)
+                <?php
+                $t = (($suma->cantidad) * ($suma->precio) + $t);
+                ?>
+                @endif
+            @endforeach
+        </div>
+        @else
         <div>
             <?php
             $t = 0?>
@@ -156,6 +190,7 @@
                 @endif
             @endforeach
         </div>
+        @endguest
         </tbody>
     </table>
 

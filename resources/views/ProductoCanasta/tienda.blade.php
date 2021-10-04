@@ -128,7 +128,7 @@
                         <div>
                             <center>
                             @guest
-                            <a href="{{url ('/carrito/create/'.$producto->id,Auth::user()->id}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
+                            <a href="{{url ('/carrito/create/'.$producto->id,0)}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
                             @else
                             <a href="{{url ('/carrito/create/'.$producto->id,Auth::user()->id)}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
                             @endguest
