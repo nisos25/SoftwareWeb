@@ -127,7 +127,8 @@
 
                         <div>
                             <center>
-                            <a href="{{url ('/carrito/create/'.$producto->id,Auth::user()->name)}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
+
+                            <a href="{{url ('/carrito/create/'.$producto->id,Auth::user()->id)}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
                             </center>
                         </div>    
                     </div>

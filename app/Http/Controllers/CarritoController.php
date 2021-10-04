@@ -18,7 +18,7 @@ class CarritoController extends Controller
     public function index()
     {
         //
-        $datos['carritos']=productocanasta::select('productocanastas.id','productocanastas.Nombre','productocanastas.imagen',
+        $datos['carritos']=productocanasta::select('nombre_usuario','productocanastas.id','productocanastas.Nombre','productocanastas.imagen',
         'carritos.cantidad','productocanastas.precio','productocanastas.descuento')
         ->from('productocanastas')->join('carritos',function($query){
             $query->on('productocanastas.id','=','carritos.iduser');
@@ -35,27 +35,27 @@ class CarritoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id,$nombre_usuario)
+    public function create($id,$id_usuario)
     {
         //
-        $producto=DB::insert('insert into carritos (iduser,nombre_usuario,cantidad) values (?,?,?)',[$id,$nombre_usuario,1]);
+        $producto=DB::insert('insert into carritos (idprod,id_usuario,cantidad) values (?,?,?)',[$id,$id_usuario,1]);
         return redirect('Tienda');
     }
 
-    public function existe($id,$nombre_usuario)
+    public function existe($id,$id_usuario)
     {   
-        $producto=DB::table('carritos')->where('iduser','=',$id)->get();
+        $producto=DB::table('carritos')->where('id_usuario','=',$id_usuario,'and','idprod','=',$id)->get();
 
         if(count($producto)>0){
-            $this->actualizar($id,'+');
+            $this->actualizar($id);
         }else{
-            $this->create($id,$nombre_usuario);
+            $this->create($id,$id_usuario);
         }
 
          return redirect('Tienda');
     }
-    public function actualizar($id,$operacion){
-         $datos=DB::update('update carritos set cantidad = cantidad+1 where iduser=?',[$id]);
+    public function actualizar($id){
+         $datos=DB::update('update carritos set cantidad = cantidad+1 where idprod=?',[$id]);
          return redirect('Tienda');
     }
     /**
