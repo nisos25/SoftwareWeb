@@ -17,11 +17,10 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<!-- Navigation -->
 
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{route('home')}}">  <img src="img/logo.png"></a>
+        <a class="navbar-brand" href="{{route('home')}}"> <img src="img/logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
@@ -150,9 +149,10 @@
     <div class="row padding">
         <div class="col-md-12 col-lg-6">
             <h2>Emprendimientos y asociaciones</h2>
-            <p>Uno de los objetivos de cauca agrosostenible es promover los emprendimientos de nuestro departamento
-                por lo cual decimos darle todo un espacio para que cada persona se tome el trabajo de conocerlas mas a
-                fondo
+            <p style="font-size: 1.3rem">Uno de los objetivos de cauca agro sostenible es promover los emprendimientos de nuestro departamento por
+                lo cual decidimos darles visibilidad contando sus historias para que más personas los conozcan y los
+                apoyen. Aquí encontrarás más información de cada uno de los emprendimientos que trabajan día a día para
+                vender los mejores productos
             </p>
             <a href="{{ route('emprendimiento') }}" class="btn btn-primary">Más</a>
         </div>
@@ -223,32 +223,29 @@
     <div class="container-fluid padding">
         <div class="row text-center">
             <div class="col-md-4">
-                <img src="img/w3newbie.png">
+                <img src="img/logoFooter.png">
                 <hr class="light">
-                <p>Informacion</p>
-                <p>caucaagrosostenible@gmail.com</p>
+                <p>Información</p>
+                <p>cauca@agrosostenible.com</p>
                 <p>Cl 5 #4-70, Popayán, Cauca</p>
-                <p>Popayan, Cauca</p>
+                <p>Popayán, Cauca</p>
             </div>
             <div class="col-md-4">
                 <hr class="light">
                 <h5>Redes</h5>
                 <hr class="light">
-                <p><img src="img/facebook.png" width="100" alt=""></p>
-                <p>Lunes</p>
-                <p>Lunes</p>
+                <p><img src="img/facebook.png" width="50" alt=""> <img src="img/twitter.png" width="50" alt=""> <img src="img/instagram.png" width="50" alt=""></p>
             </div>
             <div class="col-md-4">
                 <hr class="light">
-                <h5>Horas</h5>
+                <h5>Horario de atención</h5>
                 <hr class="light">
-                <p>Lunes</p>
-                <p>Lunes</p>
-                <p>Lunes</p>
+                <p>Lunes-Sábado: 7:30 - 19:00</p>
+                <p>Domingos-Festivos: 9:00 - 18:00</p>
             </div>
             <div class="col-12">
                 <hr class="light">
-                <h5>&copy; caucaagro</h5>
+                <h5>&copy; Caucaagro</h5>
             </div>
         </div>
     </div>

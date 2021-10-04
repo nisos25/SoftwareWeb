@@ -127,7 +127,7 @@
                             <a href="{{url ('/carrito/create/'.$producto->id,Auth::user()->id)}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
                             @endguest
                             </center>
-                    </div> 
+                    </div>
                 </div>
             </div>
 @endforeach
@@ -139,32 +139,29 @@
     <div class="container-fluid padding">
         <div class="row text-center">
             <div class="col-md-4">
-                <img src="img/w3newbie.png">
+                <img src="img/logoFooter.png">
                 <hr class="light">
-                <p>3111111111</p>
-                <p>correa@dominio.com</p>
-                <p>Calle 123 #1-23</p>
-                <p>Popayan, Cauca</p>
+                <p>Información</p>
+                <p>cauca@agrosostenible.com</p>
+                <p>Cl 5 #4-70, Popayán, Cauca</p>
+                <p>Popayán, Cauca</p>
             </div>
             <div class="col-md-4">
                 <hr class="light">
-                <h5>Horas</h5>
+                <h5>Redes</h5>
                 <hr class="light">
-                <p>Lunes</p>
-                <p>Lunes</p>
-                <p>Lunes</p>
+                <p><img src="img/facebook.png" width="50" alt=""> <img src="img/twitter.png" width="50" alt=""> <img src="img/instagram.png" width="50" alt=""></p>
             </div>
             <div class="col-md-4">
                 <hr class="light">
-                <h5>Horas</h5>
+                <h5>Horario de atención</h5>
                 <hr class="light">
-                <p>Lunes</p>
-                <p>Lunes</p>
-                <p>Lunes</p>
+                <p>Lunes-Sábado: 7:30 - 19:00</p>
+                <p>Domingos-Festivos: 9:00 - 18:00</p>
             </div>
             <div class="col-12">
                 <hr class="light">
-                <h5>&copy; Pagina</h5>
+                <h5>&copy; Caucaagro</h5>
             </div>
         </div>
     </div>
