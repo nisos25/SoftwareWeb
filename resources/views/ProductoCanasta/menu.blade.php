@@ -149,7 +149,8 @@
     <div class="row padding">
         <div class="col-md-12 col-lg-6">
             <h2>Emprendimientos y asociaciones</h2>
-            <p style="font-size: 1.3rem">Uno de los objetivos de cauca agro sostenible es promover los emprendimientos de nuestro departamento por
+            <p style="font-size: 1.3rem">Uno de los objetivos de cauca agro sostenible es promover los emprendimientos
+                de nuestro departamento por
                 lo cual decidimos darles visibilidad contando sus historias para que más personas los conozcan y los
                 apoyen. Aquí encontrarás más información de cada uno de los emprendimientos que trabajan día a día para
                 vender los mejores productos
@@ -201,7 +202,6 @@
 </div>
 <hr class="my-4">
 
-<!--- Welcome Section -->
 <section id="evento">
     <div class="container-fluid padding">
         <div class="row welcome text-center">
@@ -216,7 +216,6 @@
     </div>
 
     <div id="map">></div>
-
 </section>
 
 <footer>
@@ -234,7 +233,8 @@
                 <hr class="light">
                 <h5>Redes</h5>
                 <hr class="light">
-                <p><img src="img/facebook.png" width="50" alt=""> <img src="img/twitter.png" width="50" alt=""> <img src="img/instagram.png" width="50" alt=""></p>
+                <p><img src="img/facebook.png" width="50" alt=""> <img src="img/twitter.png" width="50" alt=""> <img
+                        src="img/instagram.png" width="50" alt=""></p>
             </div>
             <div class="col-md-4">
                 <hr class="light">

@@ -21,7 +21,8 @@ class ProductocanastaController extends Controller
         //
         $datos['productocanasta']=productocanasta::paginate(5);
         $datos['Inversionistas']=inversionista::paginate(3);
-        return view('ProductoCanasta.menu',$datos);
+        $datos2['Eventos']=eventos::paginate(50);
+        return view('ProductoCanasta.menu',$datos, $datos2);
     }
     /**
      * Show the form for creating a new resource.
@@ -154,15 +155,20 @@ class ProductocanastaController extends Controller
     public function Menu()
     {
         //
-        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','<=','0')->paginate(5);
+        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','<=','0')->paginate(50);
         $datos2['productocanasta']=Eventos::paginate(5);
         return view('ProductoCanasta.index',$datos,$datos2);
     }
 
     public function Tienda()
     {
-        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','<=','0')->paginate(5);
+        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','<=','0')->paginate(50);
         return view('ProductoCanasta.tienda',$datos);
+    }
+
+    public function Search($nombre){
+        $datos['productocanasta']=DB::table('productocanastas')->where('Nombre','like','%'.$nombre.'%')->paginate(50);
+        return view('ProductoCanasta.tienda', $datos);
     }
 
     public function Inversionistas()
@@ -180,7 +186,7 @@ class ProductocanastaController extends Controller
         return view('ProductoCanasta.ofertasTienda',$datos);
     }
     public function OfertasDescuento(){
-        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','>','1')->paginate(5);
+        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','>','1')->paginate(50);
         return view('ProductoCanasta.ofertasTienda',$datos);
     }
 }

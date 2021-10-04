@@ -72,3 +72,5 @@ Route::get('/Carrito', [CarritoController::class, 'index'])->name('CarritoCrud')
 Route::get('/carrito/create/{id}/{id_usuario}',[CarritoController::class,'existe']);
 
 Route::post('/carrito/delete/{id}/{id_usuario}',[CarritoController::class,'destroy']);
+
+Route::get('/Tienda/{nombre}', [ProductocanastaController::class, 'Search'])->name('tiendaBusqueda');
