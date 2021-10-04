@@ -151,7 +151,7 @@
                 <td>{{$producto->Nombre}}</td>
                 <td>{{$producto->cantidad}}</td>
                 <?php $preciodescuento= $producto->precio-$producto->descuento ?>
-                    <td> {{$preciodescuento}} </td>
+                    <td> ${{$preciodescuento}} </td>
 
                 @can('admin.index.create')
                     <td>
@@ -202,7 +202,7 @@
     </table>
 
     <div>
-        <h1>Total a pagar {{$t}} ahorro de {{$descuentos2}} </h1>
+        <h1>Total a pagar ${{$t}} ahorro de ${{$descuentos2}} </h1>
     </div>
 
 </div>

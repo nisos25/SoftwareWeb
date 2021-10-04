@@ -116,7 +116,7 @@
                     <div class="card-body p-4">
                         <div class="text-center">
                             <h5 class="fw-bolder">{{$producto->Nombre}}</h5>
-                            {{$producto->precio}}
+                            ${{$producto->precio}}
                         </div>
                     </div>
 

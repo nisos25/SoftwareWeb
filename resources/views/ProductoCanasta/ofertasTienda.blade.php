@@ -117,7 +117,9 @@
                         <div class="text-center">
                             <h5 class="fw-bolder">{{$producto->Nombre}}</h5>
                             <?php $preciodescuento= $producto->precio-$producto->descuento ?>
-                    <td> {{$preciodescuento}} </td>
+                            <td>$ <del>{{$producto->precio}}</del> </td>
+                            <br>
+                            <td>$ {{$preciodescuento}} </td>
                             
                         </div>
                     </div>
