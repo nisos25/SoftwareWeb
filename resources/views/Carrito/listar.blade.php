@@ -124,6 +124,7 @@
         </thead>
         <tbody>
         @foreach($carritos as $producto)
+            @if( $producto->id_usuario == Auth::user()->id)
             <tr>
                 <td><img class="img-thumbnail" src="{{asset('storage'.'/'.$producto->imagen)}}" width="100" alt="">
                 </td>
@@ -141,15 +142,18 @@
                     </td>
                 @endcan
             </tr>
+            @endif
         @endforeach
 
         <div>
             <?php
             $t = 0?>
             @foreach($total as $suma)
+                @if( $suma->id_usuario == Auth::user()->id)
                 <?php
                 $t = (($suma->cantidad) * ($suma->precio) + $t);
                 ?>
+                @endif
             @endforeach
         </div>
         </tbody>

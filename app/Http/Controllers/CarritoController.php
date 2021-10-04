@@ -24,7 +24,7 @@ class CarritoController extends Controller
             $query->on('productocanastas.id','=','carritos.idprod');
         })->get();
 
-        $total['total']=productocanasta::select('productocanastas.precio','carritos.cantidad')->from('productocanastas')->join('carritos',function($query){
+        $total['total']=productocanasta::select('id_usuario','productocanastas.precio','carritos.cantidad')->from('productocanastas')->join('carritos',function($query){
             $query->on('productocanastas.id','=','carritos.idprod');
         })->get();
         return view('Carrito.listar',$datos,$total);
