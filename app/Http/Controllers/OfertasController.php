@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ofertas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 
 class OfertasController extends Controller
@@ -17,7 +18,7 @@ class OfertasController extends Controller
     public function index()
     {
         //
-        $datos['ofertas']=Ofertas::paginate(5);
+        $datos['ofertas']=DB::table('productocanastas')->where('descuento','>','0')->paginate(5);
         return view('Ofertas.listar',$datos);
     }
 

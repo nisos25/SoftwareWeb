@@ -53,7 +53,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="navbar-brand" href="{{route('home')}}"><img src="img/carrito.png"></a>
+                    <a class="navbar-brand" href="{{route('CarritoCrud')}}"><img src="img/carrito.png"></a>
                 </li>
 
                 @guest
@@ -117,15 +117,19 @@
                         <div class="text-center">
                             <h5 class="fw-bolder">{{$producto->Nombre}}</h5>
                             {{$producto->precio}}
+                            {{$producto->id}}
                         </div>
                     </div>
+
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"> 
-                            <form  action="{{url ('CarritoCrud')}}" method="post" enctype="multipart/form-data">
-                                 <input class="btn btn-success" type="submit" Value="Carrito de compras">
-                            </form>
-                        </div>
+
+
+                        <div>
+                            <center>
+                            <a href="{{url ('/carrito/create/'.$producto->id,Auth::user()->name)}}" class="btn btn-outline-dark mt-auto"> <i class="bx bx-cart"> </i > Añadir a carrito </a>
+                            </center>
+                        </div>    
                     </div>
                 </div>
             </div>

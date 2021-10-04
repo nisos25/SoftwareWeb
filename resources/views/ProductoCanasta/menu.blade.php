@@ -59,7 +59,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="navbar-brand" href="{{route('home')}}"><img src="img/carrito.png"></a>
+                    <a class="navbar-brand" href="{{route('CarritoCrud')}}"><img src="img/carrito.png"></a>
                 </li>
 
                 @guest

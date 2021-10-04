@@ -29,6 +29,7 @@ Route::get('/crud', function () {
 Route::resource('ProductoCanasta', ProductocanastaController::class);
 
 Route::resource('AdminHome2', ProductocanastaController::class);
+
 Auth::routes(['reset'=>false]);
 
 Route::resource('Eventos', EventosController::class);
@@ -39,7 +40,7 @@ Route::resource('Inversionista', InversionistaController::class);
 
 Route::resource('Organizaciones', OrganizacionesController::class);
 
-//Route::resource('Carrito', CarritoController::class);
+Route::resource('Carrito', CarritoController::class);
 
 Route::get('storage-link', function(){Artisan::call('storage:link');});
 
@@ -68,4 +69,4 @@ Route::get('/Eventos', [EventosController::class, 'index'])->name('eventosCrud')
 
 Route::get('/Carrito', [CarritoController::class, 'index'])->name('CarritoCrud');
 
-
+Route::get('/carrito/create/{id}/{nombre_usuario}',[CarritoController::class,'existe']);

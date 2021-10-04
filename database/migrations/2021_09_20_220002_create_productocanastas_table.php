@@ -13,13 +13,13 @@ class CreateProductocanastasTable extends Migration
      */
     public function up()
     {
-        Schema::table('productocanastas', function (Blueprint $table) {
+        Schema::create('productocanastas', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre');
             $table->string('Imagen');
-            $table->string('cantidad');
-            $table->string('precio');
-            $table->string('descuento');
+            $table->integer('cantidad');
+            $table->integer('precio');
+            $table->integer('descuento');
             $table->timestamps();
         });
     }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\carrito;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use App\Models\productocanasta;
 
 class CarritoController extends Controller
 {
@@ -16,8 +18,16 @@ class CarritoController extends Controller
     public function index()
     {
         //
-        $datos['Carritos']=carrito::paginate(5);
-        return view('Carrito.listar',$datos);
+        $datos['carritos']=productocanasta::select('productocanastas.id','productocanastas.Nombre','productocanastas.imagen',
+        'carritos.cantidad','productocanastas.precio','productocanastas.descuento')
+        ->from('productocanastas')->join('carritos',function($query){
+            $query->on('productocanastas.id','=','carritos.iduser');
+        })->get();
+
+        $total['total']=productocanasta::select('productocanastas.precio','carritos.cantidad')->from('productocanastas')->join('carritos',function($query){
+            $query->on('productocanastas.id','=','carritos.iduser');
+        })->get();
+        return view('Carrito.listar',$datos,$total);
     }
 
     /**
@@ -25,12 +35,29 @@ class CarritoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id,$nombre_usuario)
     {
         //
-        return view('home');
+        $producto=DB::insert('insert into carritos (iduser,nombre_usuario,cantidad) values (?,?,?)',[$id,$nombre_usuario,1]);
+        return redirect('Tienda');
     }
 
+    public function existe($id,$nombre_usuario)
+    {   
+        $producto=DB::table('carritos')->where('iduser','=',$id)->get();
+
+        if(count($producto)>0){
+            $this->actualizar($id,'+');
+        }else{
+            $this->create($id,$nombre_usuario);
+        }
+
+         return redirect('Tienda');
+    }
+    public function actualizar($id,$operacion){
+         $datos=DB::update('update carritos set cantidad = cantidad+1 where iduser=?',[$id]);
+         return redirect('Tienda');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -40,7 +67,21 @@ class CarritoController extends Controller
     public function store(Request $request)
     {
         //
-        return view('carrito.listar');
+        $campos=[
+            'Nombre'=>'required|string|max:100',
+            'Precio'=>'required|int|max:100',
+        ];
+        $mensaje=[
+            'required'=>':attribute es requerido',
+        ];
+
+        $this->validate($request,$campos,$mensaje);
+
+        $datosProducto = request()->except(['_token','_method'] );
+
+        carrito::insert($datosProducto);
+        //return view('ProductoCanasta.edit',compact('producto'));
+        return redirect('AdminHome2')->with('mensaje','Producto Actualizado');
     }
 
     /**
@@ -52,6 +93,7 @@ class CarritoController extends Controller
     public function show(carrito $carrito)
     {
         //
+        
     }
 
     /**
@@ -83,8 +125,18 @@ class CarritoController extends Controller
      * @param  \App\Models\carrito  $carrito
      * @return \Illuminate\Http\Response
      */
-    public function destroy(carrito $carrito)
+    public function destroy( $id)
     {
         //
+        DB::delete('DELETE FROM  carritos WHERE iduser=?',[$id]);
+        return redirect('AdminHome2')->with('mensaje','Producto Eliminado');
+    }
+
+    public function totalPagar(){
+        //
+        $datos['totalpagar']=productocanasta::SELECT('productocanastas.precio','carritos.cantidad')->from('productocanastas')->join('carritos',function($query){
+            $query->on('productocanastas.id','=','carritos.iduser');
+        })->get();
+        return $datos;   
     }
 }

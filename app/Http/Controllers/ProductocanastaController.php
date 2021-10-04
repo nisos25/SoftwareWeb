@@ -180,7 +180,7 @@ class ProductocanastaController extends Controller
         return view('ProductoCanasta.ofertasTienda',$datos);
     }
     public function OfertasDescuento(){
-        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','=','1')->paginate(5);
+        $datos['productocanasta']=DB::table('productocanastas')->where('descuento','>','1')->paginate(5);
         return view('ProductoCanasta.ofertasTienda',$datos);
     }
 }
